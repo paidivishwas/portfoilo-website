@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Copy, Check } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
 import { profile, socials } from '../data/content'
@@ -13,7 +13,7 @@ const pages = [
 
 const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
 
-/** Contact line: opens mail/phone app; a small "Copy" button appears on hover. */
+/** Contact line: opens mail/phone app; a copy icon at the start appears on hover. */
 function ContactLink({ href, value }) {
   const [copied, setCopied] = useState(false)
 
@@ -28,16 +28,16 @@ function ContactLink({ href, value }) {
   }
 
   return (
-    <div className="group flex flex-wrap items-center gap-x-3 gap-y-1">
-      <a href={href} className={`break-all ${linkClass}`}>{value}</a>
+    <div className="group flex items-center gap-3">
       <button
         type="button"
         onClick={copy}
-        aria-label={`Copy ${value}`}
-        className="rounded-full border border-line px-3 py-0.5 text-xs text-mute opacity-0 transition-all duration-300 hover:border-ink hover:text-ink focus-visible:opacity-100 group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"
+        aria-label={copied ? 'Copied' : `Copy ${value}`}
+        className="shrink-0 text-mute opacity-0 transition-all duration-300 hover:text-ink focus-visible:opacity-100 group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"
       >
-        {copied ? 'Copied' : 'Copy'}
+        {copied ? <Check size={18} className="text-accent" /> : <Copy size={18} />}
       </button>
+      <a href={href} className={`break-all ${linkClass}`}>{value}</a>
     </div>
   )
 }

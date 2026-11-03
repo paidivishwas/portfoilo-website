@@ -1,5 +1,6 @@
 export const profile = {
   name: 'Vishwas',
+  fullName: 'Vishwas Paidi',
   description:
     'Designing meaningful digital experiences across mobile, web, tablet, and smart TV platforms.',
   email: 'your.email@example.com', // TODO: replace

@@ -269,6 +269,3 @@ body {
   .nav__wordmark { clip-path: none; }
   .nav__items > li, .nav__theme { opacity: 1; }
 }
-
-/* Intro logo: slower, more deliberate draw than the small nav logo */
-.intro-logo .nav__mark-letters { animation-duration: 2.4s; animation-delay: .5s; }

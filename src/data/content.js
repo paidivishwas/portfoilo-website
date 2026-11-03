@@ -52,15 +52,16 @@ export const projects = [
 export const tools = ['Figma', 'Adobe XD', 'Photoshop', 'Framer']
 
 // TODO: replace each '#' with the real link
+// color = brand colour used for the tinted pill and the hover fill; on = text colour on that fill
 export const socials = [
-  { label: 'Resume', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'Mail', href: `mailto:${profile.email}` },
-  { label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}` },
-  { label: 'GitHub', href: '#' },
-  { label: 'Behance', href: '#' },
-  { label: 'Instagram', href: '#' },
-  { label: 'X', href: '#' },
+  { key: 'resume', label: 'Resume', href: '#', color: '#f59e0b', on: '#161616' },
+  { key: 'linkedin', label: 'LinkedIn', href: '#', color: '#0a66c2', on: '#ffffff' },
+  { key: 'mail', label: 'Mail', href: `mailto:${profile.email}`, color: '#ea4335', on: '#ffffff' },
+  { key: 'whatsapp', label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}`, color: '#25d366', on: '#0b2a16' },
+  { key: 'behance', label: 'Behance', href: '#', color: '#1769ff', on: '#ffffff' },
+  { key: 'github', label: 'GitHub', href: '#', color: '#e6edf3', on: '#161616' },
+  { key: 'instagram', label: 'Instagram', href: '#', color: '#e4405f', on: '#ffffff' },
+  { key: 'x', label: 'X', href: '#', color: '#e6edf3', on: '#161616' },
 ]
 
 // TODO: replace with your real roles (newest first)

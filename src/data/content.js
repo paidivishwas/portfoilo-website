@@ -62,3 +62,21 @@ export const socials = [
   { label: 'Instagram', href: '#' },
   { label: 'X', href: '#' },
 ]
+
+// TODO: replace with your real roles (newest first)
+export const experience = [
+  {
+    role: 'Role Title',
+    company: 'Company Name, City, Country',
+    period: 'Mon YYYY - Present',
+    description:
+      'Short summary of what you do in this role: the platforms you design for, who you work with, and the impact of your work.',
+  },
+  {
+    role: 'Previous Role Title',
+    company: 'Previous Company, City, Country',
+    period: 'Mon YYYY - Mon YYYY',
+    description:
+      'Short summary of this earlier role: what the company does and what you were responsible for.',
+  },
+]

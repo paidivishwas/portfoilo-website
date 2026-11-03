@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Copy, Check, ArrowUpRight } from 'lucide-react'
+import { Mail, Phone, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
 import { profile, socials } from '../data/content'
@@ -13,29 +12,17 @@ const pages = [
 
 const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
 
-function CopyPhone() {
-  const [copied, setCopied] = useState(false)
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(profile.phone)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
-    } catch {
-      /* clipboard unavailable */
-    }
-  }
-
+/** Contact line whose icon fades in from the left on hover/focus. */
+function ContactLink({ href, icon: Icon, children }) {
   return (
-    <button
-      type="button"
-      onClick={copy}
-      className="group flex items-center gap-3 text-xl text-ink"
-      aria-label={copied ? 'Phone number copied' : 'Copy phone number'}
-    >
-      {copied ? <Check size={18} className="text-accent" /> : <Copy size={18} className="text-mute transition-colors group-hover:text-ink" />}
-      <span>{profile.phone}</span>
-    </button>
+    <a href={href} className={`group relative flex items-center ${linkClass}`}>
+      <Icon
+        size={18}
+        strokeWidth={1.5}
+        className="absolute -left-7 hidden text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 md:block md:-translate-x-2"
+      />
+      <span className="break-all">{children}</span>
+    </a>
   )
 }
 
@@ -62,11 +49,9 @@ export default function Contact() {
           </ul>
 
           {/* Contact details */}
-          <div className="space-y-5">
-            <a href={`mailto:${profile.email}`} className={`${linkClass} block break-all`}>
-              {profile.email}
-            </a>
-            <CopyPhone />
+          <div className="space-y-5 md:pl-7">
+            <ContactLink href={`mailto:${profile.email}`} icon={Mail}>{profile.email}</ContactLink>
+            <ContactLink href={`tel:${profile.phoneRaw}`} icon={Phone}>{profile.phone}</ContactLink>
           </div>
 
           {/* Socials */}

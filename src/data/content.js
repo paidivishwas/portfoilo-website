@@ -1,6 +1,5 @@
 export const profile = {
   name: 'Vishwas',
-  title: 'Product Designer / UI/UX Designer',
   description:
     'Designing meaningful digital experiences across mobile, web, tablet, and smart TV platforms.',
   email: 'your.email@example.com', // TODO: replace
@@ -10,7 +9,7 @@ export const profile = {
 
 export const about = {
   intro:
-    "I'm a Product Designer who turns complex problems into clear, intuitive interfaces. My work blends user research, systems thinking, and careful visual craft.",
+    "I turn complex problems into clear, intuitive interfaces. My work blends user research, systems thinking, and careful visual craft.",
   detail:
     'With 1+ year of product design experience, I have shaped streaming, TV, and AI-driven products used across screens of every size — from phones to the living-room TV.',
   years: '1+',

@@ -7,14 +7,14 @@ export default function ProjectCard({ project, index, icon: Icon }) {
       <article className="group">
         <a href={project.href} className="block" aria-label={`View case study: ${project.title}`}>
           {/* Thumbnail placeholder: replace with an <img> when assets are ready */}
-          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-neutral-200 transition-colors duration-500 group-hover:bg-ink">
-            <span className="absolute left-5 top-4 text-sm text-mute transition-colors group-hover:text-neutral-400">
+          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-tile transition-colors duration-500 group-hover:bg-ink">
+            <span className="absolute left-5 top-4 text-sm text-mute transition-colors group-hover:text-mute">
               0{index + 1}
             </span>
             <Icon
               size={72}
               strokeWidth={1}
-              className="text-neutral-400 transition-all duration-500 group-hover:scale-105 group-hover:text-paper"
+              className="text-mute transition-all duration-500 group-hover:scale-105 group-hover:text-paper"
             />
           </div>
           <div className="mt-5 flex items-start justify-between gap-4">

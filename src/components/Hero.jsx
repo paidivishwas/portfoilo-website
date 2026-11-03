@@ -13,9 +13,6 @@ export default function Hero() {
   return (
     <section id="top" className="flex min-h-svh items-center pt-16">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <motion.p {...item(0)} className="mb-6 text-sm uppercase tracking-widest text-mute">
-          {profile.title}
-        </motion.p>
         <motion.h1
           {...item(1)}
           className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tighter sm:text-6xl md:text-8xl"

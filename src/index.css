@@ -1,11 +1,31 @@
 @import "tailwindcss";
 
-@theme {
+/* Dark is the default theme; light is applied via data-theme="light" */
+:root {
+  --ink: #fafafa;
+  --paper: #0a0a0a;
+  --mute: #8a8a8a;
+  --line: #262626;
+  --tile: #171717;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --ink: #0a0a0a;
+  --paper: #fafafa;
+  --mute: #737373;
+  --line: #e5e5e5;
+  --tile: #e5e5e5;
+  color-scheme: light;
+}
+
+@theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --color-ink: #0a0a0a;
-  --color-paper: #fafafa;
-  --color-mute: #737373;
-  --color-line: #e5e5e5;
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-mute: var(--mute);
+  --color-line: var(--line);
+  --color-tile: var(--tile);
 }
 
 html {

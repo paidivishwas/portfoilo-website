@@ -57,6 +57,9 @@ export default function Navbar() {
         const el = document.getElementById(id)
         if (el && el.getBoundingClientRect().top <= 96) current = id
       }
+      // Short last section can never reach the top, so treat page bottom as the last link
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+      if (atBottom) current = links[links.length - 1].id
       setActive(current)
     }
     const onScroll = () => {
@@ -165,6 +168,7 @@ export default function Navbar() {
                     onMouseEnter={onEnter}
                     onMouseDown={() => setHl((h) => ({ ...h, pressed: true }))}
                     onMouseUp={() => setHl((h) => ({ ...h, pressed: false }))}
+                    onClick={() => setActive(l.id)}
                   >
                     <Roll text={l.label} />
                   </a>
@@ -204,7 +208,10 @@ export default function Navbar() {
                 <a
                   href={`#${l.id}`}
                   className={`nav__panel-item${active === l.id ? ' is-active' : ''}`}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setActive(l.id)
+                    setOpen(false)
+                  }}
                 >
                   {l.label}
                 </a>

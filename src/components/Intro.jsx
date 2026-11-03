@@ -30,7 +30,7 @@ export default function Intro() {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           aria-hidden="true"
         >
-          <Logo size={96} className="nav__mark text-ink" />
+          <Logo size={96} className="nav__mark intro-logo text-ink" />
         </motion.div>
       )}
     </AnimatePresence>

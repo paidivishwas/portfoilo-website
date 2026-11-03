@@ -3,8 +3,9 @@ export const profile = {
   fullName: 'Vishwas Paidi',
   description:
     'Designing meaningful digital experiences across mobile, web, tablet, and smart TV platforms.',
-  email: 'your.email@example.com', // TODO: replace
-  linkedin: 'https://www.linkedin.com/in/your-profile', // TODO: replace
+  email: 'paidivishwas@gmail.com',
+  phone: '+91 83400 11320',
+  phoneRaw: '+918340011320',
   portfolio: '#work',
 }
 
@@ -49,3 +50,15 @@ export const projects = [
 ]
 
 export const tools = ['Figma', 'Adobe XD', 'Photoshop', 'Framer']
+
+// TODO: replace each '#' with the real link
+export const socials = [
+  { label: 'Resume', href: '#' },
+  { label: 'LinkedIn', href: '#' },
+  { label: 'Mail', href: `mailto:${profile.email}` },
+  { label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}` },
+  { label: 'GitHub', href: '#' },
+  { label: 'Behance', href: '#' },
+  { label: 'Instagram', href: '#' },
+  { label: 'X', href: '#' },
+]

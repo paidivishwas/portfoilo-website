@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 import { profile } from '../data/content'
+import Logo from './Logo'
 
 const links = [
   { label: 'About', id: 'about' },
@@ -139,15 +140,7 @@ export default function Navbar() {
           <div className="nav__pill-bg" aria-hidden="true" />
 
           <a href="#top" className="nav__logo" aria-label={`${profile.name} — home`}>
-            <svg className="nav__mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle className="nav__mark-ring" cx="16" cy="16" r="15" />
-              {/* V and P share one stroke: the V's right arm becomes the P's stem */}
-              <path
-                className="nav__mark-letters"
-                pathLength="1"
-                d="M8 9.5 L12.5 22.5 L17.5 9.5 V22.5 M17.5 9.5 H20.5 a4.25 4.25 0 0 1 0 8.5 H17.5"
-              />
-            </svg>
+            <Logo />
             <span className="nav__wordmark">{profile.fullName}</span>
           </a>
 

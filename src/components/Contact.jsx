@@ -1,48 +1,95 @@
-import { Mail, Link2, ArrowUpRight } from 'lucide-react'
-import Section from './Section'
+import { useState } from 'react'
+import { Copy, Check, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
-import { profile } from '../data/content'
+import Logo from './Logo'
+import { profile, socials } from '../data/content'
 
-const rows = [
-  { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
-  { icon: Link2, label: 'LinkedIn', value: 'Connect on LinkedIn', href: profile.linkedin },
+const pages = [
+  { label: 'Home', href: '#top' },
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#work' },
+  { label: 'Skills', href: '#skills' },
 ]
+
+const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
+
+function CopyPhone() {
+  const [copied, setCopied] = useState(false)
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.phone)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      className="group flex items-center gap-3 text-xl text-ink"
+      aria-label={copied ? 'Phone number copied' : 'Copy phone number'}
+    >
+      {copied ? <Check size={18} className="text-accent" /> : <Copy size={18} className="text-mute transition-colors group-hover:text-ink" />}
+      <span>{profile.phone}</span>
+    </button>
+  )
+}
 
 export default function Contact() {
   return (
-    <Section id="contact" label="Contact" title="Let's build something meaningful together.">
+    <footer id="contact" className="border-t border-line py-20 md:py-28">
       <Reveal>
-        <ul className="border-t border-line">
-          {rows.map(({ icon: Icon, label, value, href }) => (
-            <li key={label} className="border-b border-line">
-              <a
-                href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-                className="group flex items-center justify-between gap-4 py-6"
-              >
-                <span className="flex items-center gap-4">
-                  <Icon size={20} className="text-mute" />
-                  <span className="text-sm uppercase tracking-widest text-mute">{label}</span>
-                </span>
-                <span className="flex items-center gap-2 text-lg md:text-2xl">
-                  <span className="break-all">{value}</span>
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.4fr_1fr]">
+          {/* Brand */}
+          <div>
+            <Logo size={40} className="nav__mark text-ink" />
+            <p className="mt-5 text-sm text-mute">
+              {profile.fullName} © {new Date().getFullYear()}
+            </p>
+          </div>
+
+          {/* Pages */}
+          <ul className="space-y-5">
+            {pages.map((p) => (
+              <li key={p.label}>
+                <a href={p.href} className={linkClass}>{p.label}</a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Contact details */}
+          <div className="space-y-5">
+            <a href={`mailto:${profile.email}`} className={`${linkClass} block break-all`}>
+              {profile.email}
+            </a>
+            <CopyPhone />
+          </div>
+
+          {/* Socials */}
+          <ul className="space-y-5">
+            {socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target={s.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                  className={`group inline-flex items-center gap-2 ${linkClass}`}
+                >
+                  {s.label}
                   <ArrowUpRight
-                    size={20}
-                    className="shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                    size={16}
+                    className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          href={profile.portfolio}
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-80"
-        >
-          View Portfolio <ArrowUpRight size={16} />
-        </a>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Reveal>
-    </Section>
+    </footer>
   )
 }

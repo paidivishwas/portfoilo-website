@@ -1,4 +1,5 @@
-import { Mail, Phone, ArrowUpRight } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
 import { profile, socials } from '../data/content'
@@ -12,17 +13,32 @@ const pages = [
 
 const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
 
-/** Contact line whose icon fades in from the left on hover/focus. */
-function ContactLink({ href, icon: Icon, children }) {
+/** Contact line: opens mail/phone app; a small "Copy" button appears on hover. */
+function ContactLink({ href, value }) {
+  const [copied, setCopied] = useState(false)
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+
   return (
-    <a href={href} className={`group relative flex items-center ${linkClass}`}>
-      <Icon
-        size={18}
-        strokeWidth={1.5}
-        className="absolute -left-7 hidden text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 md:block md:-translate-x-2"
-      />
-      <span className="break-all">{children}</span>
-    </a>
+    <div className="group flex flex-wrap items-center gap-x-3 gap-y-1">
+      <a href={href} className={`break-all ${linkClass}`}>{value}</a>
+      <button
+        type="button"
+        onClick={copy}
+        aria-label={`Copy ${value}`}
+        className="rounded-full border border-line px-3 py-0.5 text-xs text-mute opacity-0 transition-all duration-300 hover:border-ink hover:text-ink focus-visible:opacity-100 group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"
+      >
+        {copied ? 'Copied' : 'Copy'}
+      </button>
+    </div>
   )
 }
 
@@ -49,9 +65,9 @@ export default function Contact() {
           </ul>
 
           {/* Contact details */}
-          <div className="space-y-5 md:pl-7">
-            <ContactLink href={`mailto:${profile.email}`} icon={Mail}>{profile.email}</ContactLink>
-            <ContactLink href={`tel:${profile.phoneRaw}`} icon={Phone}>{profile.phone}</ContactLink>
+          <div className="space-y-5">
+            <ContactLink href={`mailto:${profile.email}`} value={profile.email} />
+            <ContactLink href={`tel:${profile.phoneRaw}`} value={profile.phone} />
           </div>
 
           {/* Socials */}

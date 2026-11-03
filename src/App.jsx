@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 import Intro from './components/Intro'
 import Spotlight from './components/Spotlight'
 import useSmoothScroll from './lib/useSmoothScroll'
-import { about } from './data/content'
+import { tickerItems } from './data/content'
 
 export default function App() {
   useSmoothScroll()
@@ -19,7 +19,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Ticker items={about.skills} />
+        <Ticker items={tickerItems} />
         <About />
         <Projects />
         <Skills />

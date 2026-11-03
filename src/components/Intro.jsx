@@ -1,28 +1,14 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import Logo from './Logo'
 import { INTRO_S, INTRO_EXIT_S } from '../lib/intro'
 
 const ORANGE = '#ff5a1f'
 const ease = [0.22, 1, 0.36, 1]
 
-/** Lightning bolt mark (simple geometric path). */
-function Bolt() {
-  return (
-    <svg viewBox="0 0 48 64" className="h-full w-full" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="bolt-fill" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#ff8a3d" />
-          <stop offset="1" stopColor="#ff4a00" />
-        </linearGradient>
-      </defs>
-      <path d="M30 0 L4 36 H21 L14 64 L44 24 H27 Z" fill="url(#bolt-fill)" />
-    </svg>
-  )
-}
-
 /**
  * Cinematic startup screen, shown once per page load.
- * Black screen -> bolt scales/rotates in with a glow and a light streak -> lifts away.
+ * Black screen -> VP logo scales/rotates in with a glow and a light streak -> lifts away.
  * Skipped entirely when the user prefers reduced motion.
  */
 export default function Intro() {
@@ -72,7 +58,7 @@ export default function Intro() {
 
           {/* Logo */}
           <motion.div
-            className="relative h-20 w-14 md:h-28 md:w-20"
+            className="relative h-24 w-24 md:h-28 md:w-28"
             initial={{ scale: 0.7, rotate: -12, opacity: 0 }}
             animate={{
               scale: 1,
@@ -91,7 +77,7 @@ export default function Intro() {
               filter: { duration: 1.5, ease: 'easeInOut' },
             }}
           >
-            <Bolt />
+            <Logo size={112} className="nav__mark nav__mark--solid h-full w-full text-white" />
           </motion.div>
         </motion.div>
       )}

@@ -149,7 +149,7 @@ body {
 }
 .nav__mark-ring { stroke: var(--border); stroke-width: 1.25; fill: var(--bg-hover); transition: stroke .2s ease; }
 .nav__mark-letters {
-  stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  stroke: currentColor; stroke-width: 2.9; stroke-linecap: round; stroke-linejoin: round;
   stroke-dasharray: 1; stroke-dashoffset: 0;
   animation: nav-mark-draw 1.1s cubic-bezier(.16, 1, .3, 1) .3s both;
 }
@@ -269,3 +269,6 @@ body {
   .nav__wordmark { clip-path: none; }
   .nav__items > li, .nav__theme { opacity: 1; }
 }
+
+/* Intro logo: solid VP, no pencil-style draw animation */
+.nav__mark--solid .nav__mark-letters { animation: none; }

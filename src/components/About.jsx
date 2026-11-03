@@ -8,7 +8,7 @@ export default function About() {
       <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
         <Reveal>
           <p className="text-7xl font-semibold tracking-tighter md:text-8xl">{about.years}</p>
-          <p className="mt-2 text-mute">years of product design experience</p>
+          <p className="mt-2 text-mute">year of product design experience</p>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-lg leading-relaxed md:text-xl">{about.intro}</p>

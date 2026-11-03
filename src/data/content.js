@@ -12,8 +12,8 @@ export const about = {
   intro:
     "I'm a Product Designer who turns complex problems into clear, intuitive interfaces. My work blends user research, systems thinking, and careful visual craft.",
   detail:
-    'With 5 years of product design experience, I have shaped streaming, TV, and AI-driven products used across screens of every size — from phones to the living-room TV.',
-  years: '5+',
+    'With 1+ year of product design experience, I have shaped streaming, TV, and AI-driven products used across screens of every size — from phones to the living-room TV.',
+  years: '1+',
   skills: ['UX Research', 'UI Design', 'Design Systems', 'Prototyping', 'Interaction Design'],
 }
 

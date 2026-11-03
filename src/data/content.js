@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Akash Pandurangan',
+  name: 'Vishwas',
   title: 'Product Designer / UI/UX Designer',
   description:
     'Designing meaningful digital experiences across mobile, web, tablet, and smart TV platforms.',

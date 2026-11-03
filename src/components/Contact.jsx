@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { Copy, Check } from 'lucide-react'
+import { Copy, Check, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
-import SocialLinks from './SocialLinks'
-import { profile } from '../data/content'
+import { profile, socials } from '../data/content'
 
 const pages = [
   { label: 'Home', href: '#top' },
@@ -47,7 +46,7 @@ export default function Contact() {
   return (
     <footer id="contact" className="border-t border-line py-20 md:py-28">
       <Reveal>
-        <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.6fr]">
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.4fr_1fr]">
           {/* Brand */}
           <div>
             <Logo size={40} className="nav__mark text-ink" />
@@ -71,11 +70,25 @@ export default function Contact() {
             <ContactLink href={`tel:${profile.phoneRaw}`} value={profile.phone} />
           </div>
 
-        </div>
-
-        {/* Social pills */}
-        <div className="mx-auto mt-16 max-w-6xl border-t border-line px-6 pt-12">
-          <SocialLinks />
+          {/* Socials */}
+          <ul className="space-y-5">
+            {socials.map((s) => (
+              <li key={s.key}>
+                <a
+                  href={s.href}
+                  target={s.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                  className={`group inline-flex items-center gap-2 ${linkClass}`}
+                >
+                  {s.label}
+                  <ArrowUpRight
+                    size={16}
+                    className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </Reveal>
     </footer>

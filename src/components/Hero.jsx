@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDownRight, Mail } from 'lucide-react'
 import { profile } from '../data/content'
+import SocialLinks from './SocialLinks'
 import { INTRO_S, INTRO_EXIT_S } from '../lib/intro'
 
 export default function Hero() {
@@ -49,6 +50,10 @@ export default function Hero() {
           >
             <Mail size={16} /> Contact Me
           </a>
+        </motion.div>
+
+        <motion.div {...reveal(0.54, { y: 12 })} className="relative mt-10">
+          <SocialLinks />
         </motion.div>
       </div>
     </section>

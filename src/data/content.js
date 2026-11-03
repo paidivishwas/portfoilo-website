@@ -81,3 +81,27 @@ export const experience = [
       'Short summary of this earlier role: what the company does and what you were responsible for.',
   },
 ]
+
+export const skillGroups = [
+  {
+    title: 'UX & Product Design',
+    skills: [
+      'Product Design', 'UI/UX Design', 'Interaction Design', 'Information Architecture',
+      'User Journeys', 'User Flows', 'Wireframing', 'Prototyping', 'Complex Workflow Simplification',
+    ],
+  },
+  {
+    title: 'Design Systems & UI',
+    skills: [
+      'Design Systems', 'Component Libraries', 'Design Tokens', 'Figma Variables',
+      'Theming', 'Responsive Design', 'Multi-platform UI', 'Accessibility (WCAG)',
+    ],
+  },
+  {
+    title: 'Research & Validation',
+    skills: [
+      'User Research', 'Usability Testing', 'User Personas', 'Journey Mapping',
+      'Design Validation', 'Iterative Design',
+    ],
+  },
+]

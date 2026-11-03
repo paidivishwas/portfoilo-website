@@ -1,21 +1,54 @@
 import Section from './Section'
 import Reveal from './Reveal'
-import { tools } from '../data/content'
+import { skillGroups, tools } from '../data/content'
+
+function SkillGroup({ group, index }) {
+  return (
+    <Reveal delay={index * 0.1} className="h-full">
+      <section
+        aria-labelledby={`skill-group-${index}`}
+        className="flex h-full flex-col rounded-[2rem] border border-line bg-tile p-6 md:p-8"
+      >
+        <p className="font-mono text-xs text-mute">0{index + 1}</p>
+        <h3 id={`skill-group-${index}`} className="mt-3 text-xl font-semibold tracking-tight md:text-2xl">
+          {group.title}
+        </h3>
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {group.skills.map((skill) => (
+            <li
+              key={skill}
+              className="rounded-full border border-line px-3.5 py-1.5 text-sm text-mute transition-colors duration-300 hover:border-accent hover:text-ink"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Reveal>
+  )
+}
 
 export default function Skills() {
   return (
-    <Section id="skills" label="Skills & Tools" title="The tools I design with.">
-      <ul className="grid grid-cols-2 border-l border-t border-line md:grid-cols-4">
-        {tools.map((t, i) => (
-          <li key={t} className="border-b border-r border-line">
-            <Reveal delay={i * 0.07}>
-              <div className="px-6 py-10 text-xl font-medium tracking-tight transition-colors hover:bg-ink hover:text-paper md:py-14">
+    <Section id="skills" label="Skills & Tools" title="What I bring to a product.">
+      <div className="grid gap-6 lg:grid-cols-3">
+        {skillGroups.map((group, i) => (
+          <SkillGroup key={group.title} group={group} index={i} />
+        ))}
+      </div>
+
+      <Reveal className="mt-16">
+        <h3 className="mb-6 text-sm uppercase tracking-widest text-mute">Tools</h3>
+        <ul className="grid grid-cols-2 border-l border-t border-line md:grid-cols-4">
+          {tools.map((t) => (
+            <li key={t} className="border-b border-r border-line">
+              <div className="px-6 py-8 text-xl font-medium tracking-tight transition-colors hover:bg-ink hover:text-paper md:py-10">
                 {t}
               </div>
-            </Reveal>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </Section>
   )
 }

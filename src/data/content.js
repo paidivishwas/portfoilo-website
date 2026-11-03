@@ -62,10 +62,3 @@ export const socials = [
   { label: 'Instagram', href: '#' },
   { label: 'X', href: '#' },
 ]
-
-// Words shown in the scrolling strip under the hero
-export const tickerItems = [
-  'UX Research', 'UI Design', 'Design Systems', 'Prototyping', 'Interaction Design',
-  'Wireframing', 'User Flows', 'Usability Testing', 'Information Architecture',
-  'Responsive Design', 'Accessibility', 'Motion Design', 'Smart TV Design', 'Product Thinking',
-]

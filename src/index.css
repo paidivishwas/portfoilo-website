@@ -43,9 +43,27 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Keep page content above the cursor spotlight */
+#root { position: relative; z-index: 1; }
+
+.spotlight {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
+  transition: opacity .6s ease;
+  background: radial-gradient(520px circle at var(--x, 50%) var(--y, 50%),
+    color-mix(in srgb, var(--accent) 13%, transparent), transparent 70%);
+}
+
+/* Nav intro animations wait until the logo intro is done */
+html:not(.intro-done) .nav,
+html:not(.intro-done) .nav * { animation-play-state: paused !important; }
 
 body {
   @apply bg-paper text-ink font-sans antialiased;
@@ -240,6 +258,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .spotlight { display: none; }
   .roll__t { transition: none; }
   .roll::after, .roll__t--dup { display: none; }
   :where(a, button):hover .roll__t:not(.roll__t--dup),

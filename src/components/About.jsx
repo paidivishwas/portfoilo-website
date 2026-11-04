@@ -1,17 +1,16 @@
 import Reveal from './Reveal'
+import SectionMarker from './SectionMarker'
 import { about } from '../data/content'
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="border-t border-line py-24 md:py-32">
+    <section id="about" aria-labelledby="about-title" className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 id="about-title" className="text-3xl font-semibold tracking-tight md:text-5xl">
-            {about.title}
-          </h2>
+          <SectionMarker id="about-title" label={about.title} className="mb-12 md:mb-16" />
         </Reveal>
 
-        <div className="mt-10 max-w-3xl space-y-8 md:mt-14">
+        <div className="max-w-3xl space-y-8">
           <Reveal delay={0.05}>
             <p className="text-lg font-semibold leading-snug text-ink md:text-xl">{about.lead}</p>
           </Reveal>

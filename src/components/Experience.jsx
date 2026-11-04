@@ -5,7 +5,7 @@ import { experience } from '../data/content'
 
 export default function Experience() {
   return (
-    <Section id="experience" label="Career" title="Experience">
+    <Section id="experience" label="Experience">
       <ul className="space-y-6">
         {experience.map((job, i) => (
           <li key={`${job.role}-${job.period}`}>

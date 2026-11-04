@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Copy, Check, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
+import SectionMarker from './SectionMarker'
 import { profile, socials } from '../data/content'
 
 const pages = [
@@ -44,8 +45,11 @@ function ContactLink({ href, value }) {
 
 export default function Contact() {
   return (
-    <footer id="contact" className="border-t border-line py-20 md:py-28">
+    <footer id="contact" className="py-20 md:py-28">
       <Reveal>
+        <div className="mx-auto mb-14 max-w-6xl px-6 md:mb-20">
+          <SectionMarker label="Contact" />
+        </div>
         <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.4fr_1fr]">
           {/* Brand */}
           <div>

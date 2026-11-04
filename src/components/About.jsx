@@ -1,27 +1,32 @@
-import Section from './Section'
 import Reveal from './Reveal'
 import { about } from '../data/content'
 
 export default function About() {
   return (
-    <Section id="about" label="About" title="Design that is clear, considered, and human.">
-      <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+    <section id="about" aria-labelledby="about-title" className="border-t border-line py-24 md:py-32">
+      <div className="mx-auto max-w-3xl px-6 text-center">
         <Reveal>
-          <p className="text-7xl font-semibold tracking-tighter md:text-8xl">{about.years}</p>
-          <p className="mt-2 text-mute">year of product design experience</p>
+          <p className="mb-6 text-sm uppercase tracking-widest text-mute">About Me</p>
+          <h2 id="about-title" className="text-2xl font-semibold leading-snug tracking-tight md:text-4xl md:leading-snug">
+            {about.headline}
+          </h2>
         </Reveal>
+
         <Reveal delay={0.1}>
-          <p className="text-lg leading-relaxed md:text-xl">{about.intro}</p>
-          <p className="mt-6 leading-relaxed text-mute">{about.detail}</p>
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {about.skills.map((s) => (
-              <li key={s} className="rounded-full border border-line px-4 py-1.5 text-sm">
-                {s}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-8 text-base leading-relaxed text-mute md:text-lg md:leading-relaxed">
+            {about.intro}
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <h3 className="mt-14 text-xl font-semibold tracking-tight md:text-2xl">
+            {about.approachTitle}
+          </h3>
+          <p className="mt-4 text-base leading-relaxed text-mute md:text-lg md:leading-relaxed">
+            {about.approach}
+          </p>
         </Reveal>
       </div>
-    </Section>
+    </section>
   )
 }

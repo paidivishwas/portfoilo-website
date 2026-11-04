@@ -11,8 +11,6 @@ export const profile = {
   phoneRaw: '+918340011320',
   portfolio: '#work',
   // TODO: confirm these hire-card details
-  experienceYears: '1+ years',
-  lastCompany: 'QuickPlay, Chennai',
   availability: 'Open to work',
   resume: '#',
   linkedin: '#',

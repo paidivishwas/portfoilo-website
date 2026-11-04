@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { Building2, Check, Clock, Copy, FileText, Mail, Phone, X } from 'lucide-react'
+import { Check, Copy, FileText, Mail, Phone, X } from 'lucide-react'
 import Logo from './Logo'
 import { profile } from '../data/content'
 
@@ -108,8 +108,6 @@ export default function HireMe() {
               </span>
 
               <div className="mt-4">
-                <Row icon={Clock} label="Experience">{profile.experienceYears}</Row>
-                <Row icon={Building2} label="Last company">{profile.lastCompany}</Row>
                 <Row icon={Mail} label="Email">
                   <a href={`mailto:${profile.email}`} className="break-all">{profile.email}</a>
                   <CopyBtn value={profile.email} />

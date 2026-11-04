@@ -4,28 +4,29 @@ import { about } from '../data/content'
 export default function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="border-t border-line py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6 text-center">
+      <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="mb-6 text-sm uppercase tracking-widest text-mute">About Me</p>
-          <h2 id="about-title" className="text-2xl font-semibold leading-snug tracking-tight md:text-4xl md:leading-snug">
-            {about.headline}
+          <h2 id="about-title" className="text-3xl font-semibold tracking-tight md:text-5xl">
+            {about.title}
           </h2>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <p className="mt-8 text-base leading-relaxed text-mute md:text-lg md:leading-relaxed">
-            {about.intro}
-          </p>
-        </Reveal>
+        <div className="mt-10 max-w-3xl space-y-8 md:mt-14">
+          <Reveal delay={0.05}>
+            <p className="text-lg font-semibold leading-snug text-ink md:text-xl">{about.lead}</p>
+          </Reveal>
 
-        <Reveal delay={0.2}>
-          <h3 className="mt-14 text-xl font-semibold tracking-tight md:text-2xl">
-            {about.approachTitle}
-          </h3>
-          <p className="mt-4 text-base leading-relaxed text-mute md:text-lg md:leading-relaxed">
-            {about.approach}
-          </p>
-        </Reveal>
+          {about.paragraphs.map((text, i) => (
+            <Reveal key={i} delay={0.1 + i * 0.05}>
+              <p className="text-lg leading-8 text-mute md:text-xl md:leading-9">{text}</p>
+            </Reveal>
+          ))}
+
+          <Reveal delay={0.3}>
+            <p className="text-lg font-semibold leading-snug text-ink md:text-xl">{about.approachTitle}</p>
+            <p className="mt-3 text-lg leading-8 text-mute md:text-xl md:leading-9">{about.approach}</p>
+          </Reveal>
+        </div>
       </div>
     </section>
   )

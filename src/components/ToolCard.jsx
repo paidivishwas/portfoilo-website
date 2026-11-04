@@ -1,4 +1,4 @@
-import { siFigma, siFramer, siClaude, siClaudecode, siGooglegemini, siGithub, siWordpress, siVercel } from 'simple-icons'
+import { siFigma, siFramer, siClaude, siClaudecode, siGooglegemini, siGithub, siWordpress, siVercel, siNotion } from 'simple-icons'
 
 const logos = {
   figma: siFigma,
@@ -9,6 +9,7 @@ const logos = {
   github: siGithub,
   wordpress: siWordpress,
   vercel: siVercel,
+  notion: siNotion,
 }
 
 function ToolIcon({ tool }) {

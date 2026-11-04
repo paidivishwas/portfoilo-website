@@ -106,6 +106,8 @@ export const tools = [
   { name: 'VS Code', desc: 'Code editor', badge: 'VS', color: '#0098ff' },
   { name: 'GitHub', desc: 'Version control', icon: 'github', color: '#e6edf3' },
   { name: 'WordPress', desc: 'Websites & CMS', icon: 'wordpress', color: '#21759b' },
+  { name: 'Notion', desc: 'Docs & planning', icon: 'notion', color: '#e6edf3' },
+  { name: 'Canva', desc: 'Quick graphics', badge: 'Ca', color: '#00c4cc' },
   { name: 'Vercel', desc: 'Deploy & hosting', icon: 'vercel', color: '#e6edf3' },
 ]
 

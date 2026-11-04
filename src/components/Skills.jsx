@@ -39,9 +39,20 @@ export default function Skills() {
       </div>
 
       <Reveal className="mt-16">
-        <h3 className="mb-6 text-sm uppercase tracking-widest text-mute">Tools</h3>
+        <h3 className="mb-6 text-sm uppercase tracking-widest text-mute">Design &amp; Development Tools</h3>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {tools.map((t) => (
+          {tools.filter((t) => !t.ai).map((t) => (
+            <li key={t.name}>
+              <ToolCard tool={t} />
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+
+      <Reveal className="mt-16">
+        <h3 className="mb-6 text-sm uppercase tracking-widest text-mute">AI Tools</h3>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {tools.filter((t) => t.ai).map((t) => (
             <li key={t.name}>
               <ToolCard tool={t} />
             </li>

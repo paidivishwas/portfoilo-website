@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh items-center justify-center overflow-hidden pb-24 pt-28 md:min-h-[798px]"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden pb-20 pt-36 md:min-h-[798px] md:pt-44"
     >
       {/* Soft lavender glow falling from the top of the page */}
       <motion.div
@@ -40,18 +40,33 @@ export default function Hero() {
       {/* Perspective grid receding into the horizon */}
       <RetroGrid />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 text-center">
-        <motion.h1
-          {...reveal(0, { y: 32 })}
-          className="text-6xl font-bold leading-[0.9] tracking-tighter sm:text-7xl md:text-8xl"
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 text-center">
+        <motion.p
+          {...reveal(0, { y: 12 })}
+          className="mb-8 text-xs font-medium uppercase tracking-[0.18em] text-mute sm:text-sm"
         >
-          {profile.name}
-        </motion.h1>
-        <motion.p {...reveal(0.18, { y: 24 })} className="mx-auto mt-8 max-w-xl text-lg text-mute md:text-xl">
+          {profile.eyebrow}
+        </motion.p>
+
+        <h1 className="text-5xl font-bold leading-[0.95] tracking-tighter sm:text-6xl md:text-8xl">
+          <span className="sr-only">{profile.headline.join(' ')}</span>
+          {profile.headline.map((phrase, i) => (
+            <span key={phrase} aria-hidden="true" className="block">
+              <motion.span
+                {...reveal(0.12 + i * 0.14, { y: -14 })}
+                className="inline-block"
+              >
+                {phrase}
+              </motion.span>
+            </span>
+          ))}
+        </h1>
+
+        <motion.p {...reveal(0.6, { y: 24 })} className="mx-auto mt-8 max-w-xl text-lg text-mute md:text-xl">
           {profile.description}
         </motion.p>
 
-        <motion.div {...reveal(0.36, { y: 12, scale: 0.94 })} className="mt-12 flex flex-wrap justify-center gap-4">
+        <motion.div {...reveal(0.76, { y: 12, scale: 0.94 })} className="mt-12 flex flex-wrap justify-center gap-4">
           <a
             href="#work"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-paper shadow-[0_0_32px_-8px_rgba(255,90,31,0.5)] transition-opacity hover:opacity-85"
@@ -66,6 +81,10 @@ export default function Hero() {
           </a>
         </motion.div>
 
+        <motion.div {...reveal(0.92, { y: 8 })} className="mx-auto mt-14 max-w-xl">
+          <div className="h-px bg-line" aria-hidden="true" />
+          <p className="mt-5 text-xs uppercase tracking-[0.18em] text-mute">{profile.caption}</p>
+        </motion.div>
       </div>
     </section>
   )

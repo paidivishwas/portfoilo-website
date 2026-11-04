@@ -1,8 +1,11 @@
 export const profile = {
   name: 'Vishwas',
   fullName: 'Vishwas Paidi',
+  eyebrow: 'Product Designer & UI/UX Designer',
+  headline: ['Think Deep.', 'Design Smart.', 'Make Impact.'],
   description:
-    'Designing meaningful digital experiences across mobile, web, tablet, and smart TV platforms.',
+    'Bridging user needs and business goals through meaningful, intuitive digital experiences.',
+  caption: 'Paidi Vishwas · Portfolio 2026',
   email: 'paidivishwas@gmail.com',
   phone: '+91 83400 11320',
   phoneRaw: '+918340011320',

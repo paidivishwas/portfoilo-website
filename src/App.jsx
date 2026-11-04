@@ -5,6 +5,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import HireMe from './components/HireMe'
 import Intro from './components/Intro'
 import Spotlight from './components/Spotlight'
 import ParticleField from './components/ParticleField'
@@ -26,6 +27,7 @@ export default function App() {
         <Skills />
       </main>
       <Contact />
+      <HireMe />
     </>
   )
 }

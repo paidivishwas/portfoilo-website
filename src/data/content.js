@@ -13,9 +13,7 @@ export const about = {
   title: 'About VP',
   lead: "Hi, I'm Paidi Vishwas, a Product Designer & UI/UX Designer crafting intuitive and user-centered digital experiences that simplify everyday problems.",
   paragraphs: [
-    "I'm a Product Designer & UI/UX Designer with a background in Computer Science and Engineering (AI & ML).",
-    'I enjoy turning complex problems into simple, meaningful, and user-friendly designs that look good and work seamlessly. My technical background helps me approach design with a balance of creativity, logic, and a deeper understanding of how digital products work.',
-    "I'm passionate about creating thoughtful experiences that meet user needs and deliver real value.",
+    "I'm a Product Designer & UI/UX Designer with a background in Computer Science and Engineering (AI & ML). I enjoy turning complex problems into simple, meaningful, and user-friendly designs that look good and work seamlessly. My technical background helps me approach design with a balance of creativity, logic, and a deeper understanding of how digital products work. I'm passionate about creating thoughtful experiences that meet user needs and deliver real value.",
   ],
   approachTitle: 'My Design Approach',
   approach:

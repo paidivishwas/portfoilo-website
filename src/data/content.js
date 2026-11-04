@@ -96,7 +96,9 @@ export const projects = [
 // icon: key of a brand logo in ToolCard.jsx, or badge: letters shown in a coloured tile. color = brand colour.
 export const tools = [
   { name: 'Figma', desc: 'UI/UX & prototyping', icon: 'figma', color: '#f24e1e' },
+  { name: 'FigJam', desc: 'Workshops & flows', badge: 'FJ', color: '#a259ff' },
   { name: 'Framer', desc: 'Interactive sites', icon: 'framer', color: '#0099ff' },
+  { name: 'Adobe Illustrator', desc: 'Vector & illustration', badge: 'Ai', color: '#ff9a00' },
   { name: 'ChatGPT', desc: 'AI research & ideation', badge: 'GPT', color: '#10a37f' },
   { name: 'Claude', desc: 'AI writing & thinking', icon: 'claude', color: '#d97757' },
   { name: 'Claude Code', desc: 'AI-assisted building', icon: 'claudecode', color: '#d97757' },

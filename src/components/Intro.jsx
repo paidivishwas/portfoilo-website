@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Logo from './Logo'
 import { INTRO_S, INTRO_EXIT_S } from '../lib/intro'
 
-const ORANGE = '#ff5a1f'
+const GREEN = '#8cd55b'
 const ease = [0.22, 1, 0.36, 1]
 
 /**
@@ -38,10 +38,10 @@ export default function Intro() {
           transition={{ duration: INTRO_EXIT_S, ease: 'easeInOut' }}
           aria-hidden="true"
         >
-          {/* Soft orange glow that fades in and out */}
+          {/* Soft green glow that fades in and out */}
           <motion.div
             className="absolute h-64 w-64 rounded-full blur-3xl md:h-96 md:w-96"
-            style={{ background: ORANGE }}
+            style={{ background: GREEN }}
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: [0, 0.4, 0.18], scale: [0.6, 1.1, 1] }}
             transition={{ duration: 1.5, ease }}
@@ -50,7 +50,7 @@ export default function Intro() {
           {/* Light streak sweeping across the logo */}
           <motion.div
             className="absolute h-px w-[70vw] max-w-3xl"
-            style={{ background: `linear-gradient(90deg, transparent, ${ORANGE}, transparent)` }}
+            style={{ background: `linear-gradient(90deg, transparent, ${GREEN}, transparent)` }}
             initial={{ x: '-70vw', opacity: 0 }}
             animate={{ x: '70vw', opacity: [0, 1, 0] }}
             transition={{ duration: 1, delay: 0.45, ease: 'easeInOut' }}
@@ -65,9 +65,9 @@ export default function Intro() {
               rotate: 0,
               opacity: 1,
               filter: [
-                'drop-shadow(0 0 0px rgba(255,90,31,0))',
-                'drop-shadow(0 0 26px rgba(255,90,31,0.85))',
-                'drop-shadow(0 0 12px rgba(255,90,31,0.4))',
+                'drop-shadow(0 0 0px rgba(140,213,91,0))',
+                'drop-shadow(0 0 26px rgba(140,213,91,0.85))',
+                'drop-shadow(0 0 12px rgba(140,213,91,0.4))',
               ],
             }}
             transition={{

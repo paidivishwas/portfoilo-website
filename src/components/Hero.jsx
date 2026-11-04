@@ -69,7 +69,7 @@ export default function Hero() {
         <motion.div {...reveal(0.76, { y: 12, scale: 0.94 })} className="mt-12 flex flex-wrap justify-center gap-4">
           <a
             href="#work"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-paper shadow-[0_0_32px_-8px_rgba(255,90,31,0.5)] transition-opacity hover:opacity-85"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-paper shadow-[0_0_32px_-8px_rgba(140,213,91,0.45)] transition-opacity hover:opacity-85"
           >
             <Roll text="View My Work" /> <ArrowDownRight size={16} />
           </a>

@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDownRight, Mail } from 'lucide-react'
 import { profile } from '../data/content'
-import SocialLinks from './SocialLinks'
 import RetroGrid from './RetroGrid'
 import { INTRO_S, INTRO_EXIT_S } from '../lib/intro'
 
@@ -67,9 +66,6 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        <motion.div {...reveal(0.54, { y: 12 })} className="mt-10">
-          <SocialLinks className="justify-center" />
-        </motion.div>
       </div>
     </section>
   )

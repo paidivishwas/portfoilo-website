@@ -31,7 +31,7 @@ function SkillGroup({ group, index }) {
 
 export default function Skills() {
   return (
-    <Section id="skills" label="Skills & Tools" title="What I bring to a product.">
+    <Section id="skills" label="Skills" title="What I bring to a product.">
       <div className="grid gap-6 lg:grid-cols-3">
         {skillGroups.map((group, i) => (
           <SkillGroup key={group.title} group={group} index={i} />

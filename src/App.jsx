@@ -7,12 +7,14 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Intro from './components/Intro'
 import Spotlight from './components/Spotlight'
+import ParticleField from './components/ParticleField'
 import useSmoothScroll from './lib/useSmoothScroll'
 
 export default function App() {
   useSmoothScroll()
   return (
     <>
+      <ParticleField />
       <Spotlight />
       <Intro />
       <Navbar />

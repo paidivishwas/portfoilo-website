@@ -2,7 +2,15 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDownRight, Mail } from 'lucide-react'
 import { profile } from '../data/content'
 import SocialLinks from './SocialLinks'
+import RetroGrid from './RetroGrid'
 import { INTRO_S, INTRO_EXIT_S } from '../lib/intro'
+
+/** Button label that rolls up on hover (same effect as the nav links). */
+const Roll = ({ text }) => (
+  <span className="roll" data-text={text}>
+    <span className="roll__t">{text}</span>
+  </span>
+)
 
 export default function Hero() {
   const reduce = useReducedMotion()
@@ -16,44 +24,51 @@ export default function Hero() {
   })
 
   return (
-    <section id="top" className="flex min-h-svh items-center pt-16">
-      <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
-        {/* Very subtle orange accent glow behind the headline */}
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full blur-3xl md:h-96 md:w-96"
-          style={{ background: '#ff5a1f' }}
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 0.07 }}
-          transition={{ duration: 2, delay: base, ease: 'easeOut' }}
-        />
+    <section
+      id="top"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden pb-24 pt-28 md:min-h-[798px]"
+    >
+      {/* Soft lavender glow falling from the top of the page */}
+      <motion.div
+        aria-hidden="true"
+        className="hero-glow pointer-events-none absolute left-1/2 top-[72px] h-[798px] w-full max-w-[1120px] -translate-x-1/2"
+        initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.8, delay: base - 0.3, ease: [0.16, 1, 0.3, 1] }}
+        style={{ transformOrigin: '50% 0%' }}
+      />
 
+      {/* Perspective grid receding into the horizon */}
+      <RetroGrid />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 text-center">
         <motion.h1
           {...reveal(0, { y: 32 })}
-          className="relative max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tighter sm:text-6xl md:text-8xl"
+          className="text-6xl font-bold leading-[0.9] tracking-tighter sm:text-7xl md:text-8xl"
         >
           {profile.name}
         </motion.h1>
-        <motion.p {...reveal(0.18, { y: 24 })} className="relative mt-8 max-w-xl text-lg text-mute md:text-xl">
+        <motion.p {...reveal(0.18, { y: 24 })} className="mx-auto mt-8 max-w-xl text-lg text-mute md:text-xl">
           {profile.description}
         </motion.p>
-        <motion.div {...reveal(0.36, { y: 12, scale: 0.94 })} className="relative mt-10 flex flex-wrap gap-4">
+
+        <motion.div {...reveal(0.36, { y: 12, scale: 0.94 })} className="mt-12 flex flex-wrap justify-center gap-4">
           <a
             href="#work"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper shadow-[0_0_32px_-8px_rgba(255,90,31,0.5)] transition-opacity hover:opacity-80"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-paper shadow-[0_0_32px_-8px_rgba(255,90,31,0.5)] transition-opacity hover:opacity-85"
           >
-            View My Work <ArrowDownRight size={16} />
+            <Roll text="View My Work" /> <ArrowDownRight size={16} />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium transition-colors hover:border-ink"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-ink/20 bg-tile px-6 text-sm font-medium transition-colors hover:border-ink"
           >
-            <Mail size={16} /> Contact Me
+            <Mail size={16} /> <Roll text="Contact Me" />
           </a>
         </motion.div>
 
-        <motion.div {...reveal(0.54, { y: 12 })} className="relative mt-10">
-          <SocialLinks />
+        <motion.div {...reveal(0.54, { y: 12 })} className="mt-10">
+          <SocialLinks className="justify-center" />
         </motion.div>
       </div>
     </section>

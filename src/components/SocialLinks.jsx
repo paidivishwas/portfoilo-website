@@ -27,9 +27,9 @@ const icons = {
  * Pill links. At rest: a translucent tint of the brand colour with a coloured icon.
  * On hover/focus: the pill fills solid with the brand colour.
  */
-export default function SocialLinks() {
+export default function SocialLinks({ className = "" }) {
   return (
-    <ul className="flex flex-wrap gap-3">
+    <ul className={`flex flex-wrap gap-3 ${className}`}>
       {socials.map((s) => (
         <li key={s.key}>
           <a

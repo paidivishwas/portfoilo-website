@@ -10,6 +10,7 @@
   --fg: #ded6e4;
   --fg-subtle: #908b9a;
   --accent: #8cd55b;
+  --glow-rgb: 225, 205, 255;
   --selection-bg: #a3f072;
   --selection-fg: #3d4f1d;
   --shadow-lg: 0 2px 1px 0 rgba(22, 20, 29, .24), 0 54px 22px 0 rgba(22, 20, 29, .04),
@@ -26,6 +27,7 @@
   --fg: #3b3645;
   --fg-subtle: #6b6576;
   --accent: #5ea12a;
+  --glow-rgb: 150, 116, 224;
   --selection-bg: #a3f072;
   --selection-fg: #3d4f1d;
   --shadow-lg: 0 1px 2px 0 rgba(43, 50, 88, .04), 0 3px 8px 0 rgba(43, 50, 88, .04);
@@ -273,3 +275,16 @@ body {
 
 /* Intro logo: solid VP, no pencil-style draw animation */
 .nav__mark--solid .nav__mark-letters { animation: none; }
+
+/* Hero: soft radial glow with a fine grain overlay */
+.hero-glow {
+  background: radial-gradient(48% 45% at 50% 0%,
+    rgba(var(--glow-rgb), .07), rgba(var(--glow-rgb), .05) 20%,
+    rgba(var(--glow-rgb), .028) 45%, rgba(var(--glow-rgb), .01) 75%, rgba(var(--glow-rgb), 0));
+}
+.hero-glow::after {
+  content: ""; position: absolute; inset: 0; opacity: .06; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-image: radial-gradient(48% 45% at 50% 0%, #000 0%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(48% 45% at 50% 0%, #000 0%, #000 35%, transparent 100%);
+}

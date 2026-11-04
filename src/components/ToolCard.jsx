@@ -1,6 +1,15 @@
-import { siFigma, siFramer, siHtml5 } from 'simple-icons'
+import { siFigma, siFramer, siClaude, siClaudecode, siGooglegemini, siGithub, siWordpress, siVercel } from 'simple-icons'
 
-const logos = { figma: siFigma, framer: siFramer, html: siHtml5 }
+const logos = {
+  figma: siFigma,
+  framer: siFramer,
+  claude: siClaude,
+  claudecode: siClaudecode,
+  gemini: siGooglegemini,
+  github: siGithub,
+  wordpress: siWordpress,
+  vercel: siVercel,
+}
 
 function ToolIcon({ tool }) {
   const base = 'flex h-14 w-14 shrink-0 items-center justify-center rounded-xl'

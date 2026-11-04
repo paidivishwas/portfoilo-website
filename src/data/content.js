@@ -93,13 +93,18 @@ export const projects = [
   },
 ]
 
-// TODO: replace with your real tools.
 // icon: key of a brand logo in ToolCard.jsx, or badge: letters shown in a coloured tile. color = brand colour.
 export const tools = [
   { name: 'Figma', desc: 'UI/UX & prototyping', icon: 'figma', color: '#f24e1e' },
-  { name: 'Adobe XD', desc: 'Prototyping', badge: 'Xd', color: '#ff61f6' },
-  { name: 'Photoshop', desc: 'Image editing', badge: 'Ps', color: '#31a8ff' },
   { name: 'Framer', desc: 'Interactive sites', icon: 'framer', color: '#0099ff' },
+  { name: 'ChatGPT', desc: 'AI research & ideation', badge: 'GPT', color: '#10a37f' },
+  { name: 'Claude', desc: 'AI writing & thinking', icon: 'claude', color: '#d97757' },
+  { name: 'Claude Code', desc: 'AI-assisted building', icon: 'claudecode', color: '#d97757' },
+  { name: 'Google Gemini', desc: 'AI assistant', icon: 'gemini', color: '#8e75b2' },
+  { name: 'VS Code', desc: 'Code editor', badge: 'VS', color: '#0098ff' },
+  { name: 'GitHub', desc: 'Version control', icon: 'github', color: '#e6edf3' },
+  { name: 'WordPress', desc: 'Websites & CMS', icon: 'wordpress', color: '#21759b' },
+  { name: 'Vercel', desc: 'Deploy & hosting', icon: 'vercel', color: '#e6edf3' },
 ]
 
 // TODO: replace each '#' with the real link

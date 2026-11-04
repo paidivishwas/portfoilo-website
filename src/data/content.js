@@ -49,7 +49,14 @@ export const projects = [
   },
 ]
 
-export const tools = ['Figma', 'Adobe XD', 'Photoshop', 'Framer']
+// TODO: replace with your real tools.
+// icon: key of a brand logo in ToolCard.jsx, or badge: letters shown in a coloured tile. color = brand colour.
+export const tools = [
+  { name: 'Figma', desc: 'UI/UX & prototyping', icon: 'figma', color: '#f24e1e' },
+  { name: 'Adobe XD', desc: 'Prototyping', badge: 'Xd', color: '#ff61f6' },
+  { name: 'Photoshop', desc: 'Image editing', badge: 'Ps', color: '#31a8ff' },
+  { name: 'Framer', desc: 'Interactive sites', icon: 'framer', color: '#0099ff' },
+]
 
 // TODO: replace each '#' with the real link
 // color = brand colour used for the tinted pill and the hover fill; on = text colour on that fill

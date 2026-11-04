@@ -1,5 +1,6 @@
 import Section from './Section'
 import Reveal from './Reveal'
+import ToolCard from './ToolCard'
 import { skillGroups, tools } from '../data/content'
 
 function SkillGroup({ group, index }) {
@@ -39,12 +40,10 @@ export default function Skills() {
 
       <Reveal className="mt-16">
         <h3 className="mb-6 text-sm uppercase tracking-widest text-mute">Tools</h3>
-        <ul className="grid grid-cols-2 border-l border-t border-line md:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((t) => (
-            <li key={t} className="border-b border-r border-line">
-              <div className="px-6 py-8 text-xl font-medium tracking-tight transition-colors hover:bg-ink hover:text-paper md:py-10">
-                {t}
-              </div>
+            <li key={t.name}>
+              <ToolCard tool={t} />
             </li>
           ))}
         </ul>

@@ -18,34 +18,73 @@ export const about = {
   skills: ['UX Research', 'UI Design', 'Design Systems', 'Prototyping', 'Interaction Design'],
 }
 
+// Filter pills above the projects. A filter with no projects shows an empty state.
+export const projectFilters = ['Case Study', 'UI Screens']
+
+// TODO: confirm/replace the subtitle, platforms and focus areas with your real details.
+// category decides which filter a project appears under.
+// devices = mockups shown under the text (type: phone | tablet | tv). Add screenshots later.
 export const projects = [
   {
+    id: 'ott-platform',
     title: 'OTT Platform Design',
-    category: 'Streaming · Multi-platform',
+    subtitle: 'Multi-Platform Streaming Experience',
     description:
       'End-to-end design of a streaming experience spanning mobile, web, tablet, and TV, with a consistent system and fast content discovery.',
+    platforms: ['Mobile App', 'Tablet', 'Web', 'TV', 'Smart TV'],
+    focusAreas: ['Design System', 'UX Improvements', 'Seamless Cross-Platform Experience'],
+    category: 'Case Study',
     href: '#',
+    devices: [
+      { type: 'phone', caption: 'Mobile | Home screen' },
+      { type: 'tv', caption: 'TV | Discover' },
+      { type: 'tablet', caption: 'Tablet | Home screen' },
+    ],
   },
   {
-    title: 'Telekom Malaysia – Unifi TV 2.0',
-    category: 'Smart TV · Telco',
+    id: 'unifi-tv',
+    title: 'Unifi TV 2.0',
+    subtitle: 'Telekom Malaysia · Smart TV Experience',
     description:
-      'A redesigned TV experience focused on remote-friendly navigation, personalised home, and simpler access to live and on-demand content.',
+      'A redesigned TV experience focused on remote-friendly navigation, a personalised home, and simpler access to live and on-demand content.',
+    platforms: ['Smart TV', 'STB', 'Mobile App'],
+    focusAreas: ['Remote-First Navigation', 'Personalisation', 'UI Enhancements'],
+    category: 'Case Study',
     href: '#',
+    devices: [
+      { type: 'tv', caption: 'TV | Home' },
+      { type: 'phone', caption: 'Mobile | Remote' },
+    ],
   },
   {
+    id: 'fantv-ai',
     title: 'FanTV AI',
-    category: 'AI · Entertainment',
+    subtitle: 'AI-Powered Fan Experience',
     description:
       'An AI-powered fan experience that makes recommendations and engagement feel personal, playful, and effortless.',
+    platforms: ['Mobile App', 'Web'],
+    focusAreas: ['AI-Powered Workflows', 'Engagement', 'Design System'],
+    category: 'Case Study',
     href: '#',
+    devices: [
+      { type: 'phone', caption: 'Mobile | For You' },
+      { type: 'tablet', caption: 'Tablet | Discover' },
+    ],
   },
   {
+    id: 'cloud-dvr',
     title: 'Cloud DVR',
-    category: 'TV · Utility',
+    subtitle: 'Recording & Playback Experience',
     description:
       'Reimagined recording and playback flows so users can schedule, manage, and watch recordings without friction.',
+    platforms: ['TV', 'Smart TV', 'Mobile App'],
+    focusAreas: ['Workflow Simplification', 'UX Improvements'],
+    category: 'Case Study',
     href: '#',
+    devices: [
+      { type: 'tv', caption: 'TV | Recordings' },
+      { type: 'phone', caption: 'Mobile | Schedule' },
+    ],
   },
 ]
 

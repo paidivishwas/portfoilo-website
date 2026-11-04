@@ -4,8 +4,9 @@ import { profile } from '../data/content'
 import Logo from './Logo'
 
 const links = [
-  { label: 'About', id: 'about' },
   { label: 'Work', id: 'work' },
+  { label: 'About', id: 'about' },
+  { label: 'Experience', id: 'experience' },
   { label: 'Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },
 ]

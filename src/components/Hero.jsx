@@ -48,7 +48,7 @@ export default function Hero() {
           {profile.eyebrow}
         </motion.p>
 
-        <h1 className="text-5xl font-bold leading-[0.95] tracking-tighter sm:text-6xl md:text-8xl">
+        <h1 className="text-4xl font-bold leading-[1] tracking-tighter sm:text-5xl md:text-7xl">
           <span className="sr-only">{profile.headline.join(' ')}</span>
           {profile.headline.map((phrase, i) => (
             <span key={phrase} aria-hidden="true" className="block">

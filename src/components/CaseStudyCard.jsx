@@ -47,7 +47,18 @@ export default function CaseStudyCard({ study }) {
           <span className="sr-only"> — {study.title}</span>
         </a>
       </div>
-      <DeviceStage devices={study.devices} title={study.title} />
+      {study.cover ? (
+        <div className="mt-auto flex justify-center px-5 pt-2 sm:px-8 md:px-12">
+          <img
+            src={study.cover}
+            alt={`${study.title} screens`}
+            loading="lazy"
+            className="block h-auto w-full max-w-3xl rounded-t-2xl border border-b-0 border-line object-cover object-top"
+          />
+        </div>
+      ) : (
+        <DeviceStage devices={study.devices} title={study.title} />
+      )}
     </article>
   )
 }

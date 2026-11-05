@@ -44,6 +44,7 @@ export const projects = [
     focusAreas: ['UX Research', 'Information Architecture', 'Design System', 'Prototyping'],
     category: 'Case Study',
     href: '#/case/fleet-management',
+    cover: '/case/fleetflow/cover.png',
     figma: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
     devices: [
       { type: 'tablet', caption: 'Web | Overview' },

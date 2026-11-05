@@ -13,7 +13,7 @@ export const fleetflow = {
     { label: 'Scope', items: ['UX Research', 'Information Architecture', 'Design System', 'Prototyping'] },
     { label: 'Platforms', items: ['Web App', 'Dashboard', 'B2B SaaS'] },
   ],
-  hero: img('hero'),
+  hero: img('cover').replace('.jpg', '.png'),
   prototype: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
 
   sections: [

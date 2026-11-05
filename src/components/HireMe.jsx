@@ -58,7 +58,7 @@ export default function HireMe() {
         type="button"
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
-        className="fixed bottom-5 right-5 z-[60] inline-flex h-12 items-center rounded-full bg-accent px-6 text-sm font-semibold text-[#0b1405] shadow-[0_0_32px_-6px_rgba(140,213,91,0.6)] transition-transform hover:scale-105 md:bottom-8 md:right-8"
+        className="fixed bottom-5 right-5 z-[60] inline-flex h-12 items-center rounded-full bg-accent px-6 text-sm font-semibold text-[#0b1405] shadow-[0_0_32px_-6px_rgba(140,213,91,0.6)] transition-transform hover:scale-105 md:bottom-auto md:right-6 md:top-12 md:z-[110]"
       >
         Hire me
       </button>

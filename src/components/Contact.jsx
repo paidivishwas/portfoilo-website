@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Copy, Check, ArrowUpRight } from 'lucide-react'
+import { Copy, Check, Mail, Phone } from 'lucide-react'
 import Reveal from './Reveal'
 import Logo from './Logo'
 import SectionMarker from './SectionMarker'
@@ -15,7 +15,7 @@ const pages = [
 const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
 
 /** Contact line: opens mail/phone app; a copy icon at the start appears on hover. */
-function ContactLink({ href, value }) {
+function ContactLink({ href, value, icon: Icon }) {
   const [copied, setCopied] = useState(false)
 
   const copy = async () => {
@@ -38,7 +38,10 @@ function ContactLink({ href, value }) {
       >
         {copied ? <Check size={18} className="text-accent" /> : <Copy size={18} />}
       </button>
-      <a href={href} className={`break-all ${linkClass}`}>{value}</a>
+      <a href={href} className={`flex items-center gap-3 break-all ${linkClass}`}>
+        <Icon size={20} className="shrink-0 text-accent" aria-hidden="true" />
+        {value}
+      </a>
     </div>
   )
 }
@@ -70,8 +73,8 @@ export default function Contact() {
 
           {/* Contact details */}
           <div className="space-y-5">
-            <ContactLink href={`mailto:${profile.email}`} value={profile.email} />
-            <ContactLink href={`tel:${profile.phoneRaw}`} value={profile.phone} />
+            <ContactLink icon={Mail} href={`mailto:${profile.email}`} value={profile.email} />
+            <ContactLink icon={Phone} href={`tel:${profile.phoneRaw}`} value={profile.phone} />
           </div>
 
           {/* Socials */}
@@ -85,10 +88,6 @@ export default function Contact() {
                   className={`group inline-flex items-center gap-2 ${linkClass}`}
                 >
                   {s.label}
-                  <ArrowUpRight
-                    size={16}
-                    className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />
                 </a>
               </li>
             ))}

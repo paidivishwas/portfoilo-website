@@ -8,7 +8,6 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import HireMe from './components/HireMe'
 import Intro from './components/Intro'
-import Spotlight from './components/Spotlight'
 import ParticleField from './components/ParticleField'
 import CaseStudyPage from './components/CaseStudyPage'
 import useSmoothScroll from './lib/useSmoothScroll'
@@ -43,7 +42,6 @@ export default function App() {
   return (
     <>
       <ParticleField />
-      <Spotlight />
       <Intro />
       <Navbar />
       <main>

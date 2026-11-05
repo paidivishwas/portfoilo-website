@@ -3,6 +3,7 @@ const SPECS = {
   phone: { ratio: '9 / 19', height: '92%', radius: 'rounded-[1.75rem]' },
   tablet: { ratio: '3 / 4', height: '78%', radius: 'rounded-3xl' },
   tv: { ratio: '16 / 9', height: '58%', radius: 'rounded-2xl' },
+  laptop: { ratio: '8 / 5', height: '70%', radius: 'rounded-xl' },
 }
 
 function Skeleton() {
@@ -28,7 +29,7 @@ export default function DeviceStage({ devices, title }) {
             <figure
               key={d.caption}
               className="m-0 flex flex-col items-center justify-end gap-3"
-              style={{ height: spec.height }}
+              style={d.width ? { width: d.width } : { height: d.height ?? spec.height }}
             >
               <figcaption className="hidden shrink-0 whitespace-nowrap rounded-full border border-line bg-paper px-3 py-1 font-mono text-[11px] font-bold text-ink sm:block">
                 {d.caption}
@@ -36,10 +37,14 @@ export default function DeviceStage({ devices, title }) {
               <div
                 role="img"
                 aria-label={`${title}: ${d.caption}`}
-                className={`min-h-0 flex-1 border-2 border-b-0 border-line bg-paper ${spec.radius} rounded-b-none`}
+                className={`min-h-0 flex-1 overflow-hidden border-2 border-b-0 border-line bg-paper ${spec.radius} rounded-b-none`}
                 style={{ aspectRatio: spec.ratio }}
               >
-                <Skeleton />
+                {d.src ? (
+                  <img src={d.src} alt="" loading="lazy" className="block h-full w-full rounded-t-[inherit] object-cover object-top" />
+                ) : (
+                  <Skeleton />
+                )}
               </div>
             </figure>
           )

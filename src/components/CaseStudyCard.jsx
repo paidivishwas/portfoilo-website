@@ -1,5 +1,4 @@
 import DeviceStage from './DeviceStage'
-import { FleetFlowHero } from './FleetFlowCaseStudy'
 
 function TagRow({ label, items }) {
   return (
@@ -20,7 +19,6 @@ function TagRow({ label, items }) {
 }
 
 export default function CaseStudyCard({ study }) {
-  if (study.id === 'fleet-management') return <FleetFlowHero card />
   const id = `case-study-${study.id}`
   return (
     <article

@@ -44,11 +44,10 @@ export const projects = [
     focusAreas: ['UX Research', 'Information Architecture', 'Design System', 'Prototyping'],
     category: 'Case Study',
     href: '#/case/fleet-management',
-    cover: '/case/fleetflow/cover.png',
     figma: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
     devices: [
-      { type: 'tablet', caption: 'Web | Overview' },
-      { type: 'phone', caption: 'Web | Dispatch' },
+      { type: 'laptop', caption: 'Web | Overview', src: '/case/fleetflow/morning.jpg', width: '32%' },
+      { type: 'laptop', caption: 'Web | Dispatch', src: '/case/fleetflow/assign.jpg', width: '40%' },
     ],
   },
   // Empty layouts, ready to be filled in

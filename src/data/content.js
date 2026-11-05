@@ -34,67 +34,22 @@ export const projectFilters = ['Case Study', 'UI Screens']
 // category decides which filter a project appears under.
 // devices = mockups shown under the text (type: phone | tablet | tv). Add screenshots later.
 export const projects = [
-  {
-    id: 'ott-platform',
-    title: 'OTT Platform Design',
-    subtitle: 'Multi-Platform Streaming Experience',
-    description:
-      'End-to-end design of a streaming experience spanning mobile, web, tablet, and TV, with a consistent system and fast content discovery.',
-    platforms: ['Mobile App', 'Tablet', 'Web', 'TV', 'Smart TV'],
-    focusAreas: ['Design System', 'UX Improvements', 'Seamless Cross-Platform Experience'],
+    {
+    // TODO: add the real description, platforms and focus areas from the Figma file
+    id: 'fleet-management',
+    title: 'Fleet Management',
+    subtitle: '',
+    description: '',
+    platforms: [],
+    focusAreas: [],
     category: 'Case Study',
-    href: '#',
-    devices: [
-      { type: 'phone', caption: 'Mobile | Home screen' },
-      { type: 'tv', caption: 'TV | Discover' },
-      { type: 'tablet', caption: 'Tablet | Home screen' },
-    ],
+    href: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
+    devices: [{ type: 'tablet', caption: 'Dashboard' }],
   },
-  {
-    id: 'unifi-tv',
-    title: 'Unifi TV 2.0',
-    subtitle: 'Telekom Malaysia · Smart TV Experience',
-    description:
-      'A redesigned TV experience focused on remote-friendly navigation, a personalised home, and simpler access to live and on-demand content.',
-    platforms: ['Smart TV', 'STB', 'Mobile App'],
-    focusAreas: ['Remote-First Navigation', 'Personalisation', 'UI Enhancements'],
-    category: 'Case Study',
-    href: '#',
-    devices: [
-      { type: 'tv', caption: 'TV | Home' },
-      { type: 'phone', caption: 'Mobile | Remote' },
-    ],
-  },
-  {
-    id: 'fantv-ai',
-    title: 'FanTV AI',
-    subtitle: 'AI-Powered Fan Experience',
-    description:
-      'An AI-powered fan experience that makes recommendations and engagement feel personal, playful, and effortless.',
-    platforms: ['Mobile App', 'Web'],
-    focusAreas: ['AI-Powered Workflows', 'Engagement', 'Design System'],
-    category: 'Case Study',
-    href: '#',
-    devices: [
-      { type: 'phone', caption: 'Mobile | For You' },
-      { type: 'tablet', caption: 'Tablet | Discover' },
-    ],
-  },
-  {
-    id: 'cloud-dvr',
-    title: 'Cloud DVR',
-    subtitle: 'Recording & Playback Experience',
-    description:
-      'Reimagined recording and playback flows so users can schedule, manage, and watch recordings without friction.',
-    platforms: ['TV', 'Smart TV', 'Mobile App'],
-    focusAreas: ['Workflow Simplification', 'UX Improvements'],
-    category: 'Case Study',
-    href: '#',
-    devices: [
-      { type: 'tv', caption: 'TV | Recordings' },
-      { type: 'phone', caption: 'Mobile | Schedule' },
-    ],
-  },
+  // Empty layouts, ready to be filled in
+  { id: 'project-2', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'phone', caption: 'Screen' }, { type: 'tv', caption: 'Screen' }] },
+  { id: 'project-3', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'phone', caption: 'Screen' }, { type: 'tablet', caption: 'Screen' }] },
+  { id: 'project-4', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'tv', caption: 'Screen' }, { type: 'phone', caption: 'Screen' }] },
 ]
 
 // icon: key of a brand logo in ToolCard.jsx, or badge: letters shown in a coloured tile. color = brand colour.

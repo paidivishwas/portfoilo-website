@@ -35,20 +35,19 @@ export const projectFilters = ['Case Study', 'UI Screens']
 // devices = mockups shown under the text (type: phone | tablet | tv). Add screenshots later.
 export const projects = [
   {
-    // TODO: draft copy - replace with your real details from the Figma file
     id: 'fleet-management',
-    title: 'Fleet Management',
-    subtitle: 'Vehicle Tracking & Operations Dashboard',
+    title: 'FleetFlow',
+    subtitle: 'Exception-first Fleet Management',
     description:
-      'A fleet management experience that helps operators track vehicles, monitor drivers and manage day-to-day operations from one clear dashboard.',
-    platforms: ['Web', 'Tablet', 'Mobile App'],
-    focusAreas: ['Dashboard Design', 'UX Improvements', 'Design System'],
+      'A B2B dashboard that turns fleet data into a short, ranked list of decisions, so logistics teams fix problems before they become delays.',
+    platforms: ['Web App', 'Dashboard', 'B2B SaaS'],
+    focusAreas: ['UX Research', 'Information Architecture', 'Design System', 'Prototyping'],
     category: 'Case Study',
     href: '#/case/fleet-management',
     figma: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
     devices: [
-      { type: 'tablet', caption: 'Tablet | Dashboard' },
-      { type: 'phone', caption: 'Mobile | Live tracking' },
+      { type: 'tablet', caption: 'Web | Overview' },
+      { type: 'phone', caption: 'Web | Dispatch' },
     ],
   },
   // Empty layouts, ready to be filled in

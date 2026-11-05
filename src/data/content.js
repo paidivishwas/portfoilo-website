@@ -47,7 +47,7 @@ export const projects = [
     figma: 'https://www.figma.com/proto/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=17-2616&t=ikq6EFaOBfG8xs4T-1&scaling=min-zoom&content-scaling=fixed&page-id=17%3A2507&starting-point-node-id=17%3A2616&show-proto-sidebar=1',
     devices: [
       { type: 'laptop', caption: 'Web | Overview', src: '/case/fleetflow/morning.jpg', width: '32%' },
-      { type: 'laptop', caption: 'Web | Dispatch', src: '/case/fleetflow/assign.jpg', width: '40%' },
+      { type: 'laptop', caption: 'Web | Live tracking', src: '/case/fleetflow/tracking.jpg', width: '40%' },
     ],
   },
   // Empty layouts, ready to be filled in

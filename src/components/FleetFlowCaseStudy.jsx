@@ -144,18 +144,7 @@ export function FleetFlowHero({ onBack, card = false }) {
         <div className={`${card ? '' : 'mt-8 '}grid items-center gap-10 md:grid-cols-[1.05fr_1fr]`}>
           <div>
             <Title className="text-4xl font-bold leading-[1.05] tracking-tighter sm:text-5xl md:text-6xl">{cs.title}</Title>
-            <p className="mt-6 max-w-xl text-base leading-7 text-mute md:text-lg md:leading-8">{cs.intro}</p>
-            <dl className="mt-8 space-y-4">
-              {cs.meta.map((m) => (
-                <div key={m.label} className="grid items-start gap-2 sm:grid-cols-[110px_1fr]">
-                  <dt className="pt-2 font-mono text-sm text-mute">{m.label}</dt>
-                  <dd>
-                    <Pills items={m.items} />
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href={card ? '#/case/fleet-management' : '#overview'}
                 onClick={card ? undefined : (e) => { e.preventDefault(); goTo('overview') }}
@@ -172,6 +161,17 @@ export function FleetFlowHero({ onBack, card = false }) {
                 View the prototype <ArrowUpRight size={16} />
               </a>
             </div>
+            <p className="mt-8 max-w-xl text-base leading-7 text-mute md:text-lg md:leading-8">{cs.intro}</p>
+            <dl className="mt-8 space-y-4">
+              {cs.meta.map((m) => (
+                <div key={m.label} className="grid items-start gap-2 sm:grid-cols-[110px_1fr]">
+                  <dt className="pt-2 font-mono text-sm text-mute">{m.label}</dt>
+                  <dd>
+                    <Pills items={m.items} />
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <img src={cs.hero} alt="FleetFlow dashboard screens" className="h-auto w-full rounded-2xl object-contain" />
         </div>

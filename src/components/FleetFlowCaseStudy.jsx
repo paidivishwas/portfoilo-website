@@ -141,7 +141,7 @@ export function FleetFlowHero({ onBack, card = false }) {
           </nav>
         )}
 
-        <div className={`${card ? '' : 'mt-8 '}grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]`}>
+        <div className={`${card ? '' : 'mt-8 '}grid items-center gap-10 md:grid-cols-[1.05fr_1fr]`}>
           <div>
             <Title className="text-4xl font-bold leading-[1.05] tracking-tighter sm:text-5xl md:text-6xl">{cs.title}</Title>
             <p className="mt-6 max-w-xl text-base leading-7 text-mute md:text-lg md:leading-8">{cs.intro}</p>
@@ -173,7 +173,7 @@ export function FleetFlowHero({ onBack, card = false }) {
               </a>
             </div>
           </div>
-          <img src={cs.hero} alt="FleetFlow dashboard screens" className="h-auto w-full rounded-2xl" />
+          <img src={cs.hero} alt="FleetFlow dashboard screens" className="h-auto w-full rounded-2xl object-contain" />
         </div>
       </Wrap>
   )

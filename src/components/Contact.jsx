@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Copy, Check, Mail, Phone } from 'lucide-react'
+import { Copy, Check, FileText } from 'lucide-react'
+import { siWhatsapp, siBehance, siGithub, siInstagram, siX } from 'simple-icons'
 import Reveal from './Reveal'
 import Logo from './Logo'
 import SectionMarker from './SectionMarker'
@@ -12,10 +13,32 @@ const pages = [
   { label: 'Skills', href: '#skills' },
 ]
 
-const linkClass = 'text-xl text-mute transition-colors hover:text-ink'
+const LINKEDIN =
+  'M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z'
+
+const brand = {
+  linkedin: { path: LINKEDIN, color: '#0a66c2' },
+  whatsapp: { path: siWhatsapp.path, color: '#25d366' },
+  behance: { path: siBehance.path, color: '#1769ff' },
+  github: { path: siGithub.path, color: 'currentColor' },
+  instagram: { path: siInstagram.path, color: '#e4405f' },
+  x: { path: siX.path, color: 'currentColor' },
+}
+
+function SocialIcon({ k }) {
+  if (k === 'resume') return <FileText size={20} className="shrink-0 text-[#f59e0b]" aria-hidden="true" />
+  const b = brand[k]
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill={b.color} className="shrink-0 text-ink" aria-hidden="true">
+      <path d={b.path} />
+    </svg>
+  )
+}
+
+const linkClass ='text-xl text-mute transition-colors hover:text-ink'
 
 /** Contact line: opens mail/phone app; a copy icon at the start appears on hover. */
-function ContactLink({ href, value, icon: Icon }) {
+function ContactLink({ href, value }) {
   const [copied, setCopied] = useState(false)
 
   const copy = async () => {
@@ -38,10 +61,7 @@ function ContactLink({ href, value, icon: Icon }) {
       >
         {copied ? <Check size={18} className="text-accent" /> : <Copy size={18} />}
       </button>
-      <a href={href} className={`flex items-center gap-3 break-all ${linkClass}`}>
-        <Icon size={20} className="shrink-0 text-accent" aria-hidden="true" />
-        {value}
-      </a>
+      <a href={href} className={`break-all ${linkClass}`}>{value}</a>
     </div>
   )
 }
@@ -73,8 +93,8 @@ export default function Contact() {
 
           {/* Contact details */}
           <div className="space-y-5">
-            <ContactLink icon={Mail} href={`mailto:${profile.email}`} value={profile.email} />
-            <ContactLink icon={Phone} href={`tel:${profile.phoneRaw}`} value={profile.phone} />
+            <ContactLink href={`mailto:${profile.email}`} value={profile.email} />
+            <ContactLink href={`tel:${profile.phoneRaw}`} value={profile.phone} />
           </div>
 
           {/* Socials */}
@@ -85,8 +105,10 @@ export default function Contact() {
                   href={s.href}
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel="noreferrer"
-                  className={`group inline-flex items-center gap-2 ${linkClass}`}
+                  onClick={s.href === '#' ? (e) => e.preventDefault() : undefined}
+                  className={`group inline-flex items-center gap-3 ${linkClass}`}
                 >
+                  <SocialIcon k={s.key} />
                   {s.label}
                 </a>
               </li>

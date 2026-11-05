@@ -34,17 +34,21 @@ export const projectFilters = ['Case Study', 'UI Screens']
 // category decides which filter a project appears under.
 // devices = mockups shown under the text (type: phone | tablet | tv). Add screenshots later.
 export const projects = [
-    {
-    // TODO: add the real description, platforms and focus areas from the Figma file
+  {
+    // TODO: draft copy - replace with your real details from the Figma file
     id: 'fleet-management',
     title: 'Fleet Management',
-    subtitle: '',
-    description: '',
-    platforms: [],
-    focusAreas: [],
+    subtitle: 'Vehicle Tracking & Operations Dashboard',
+    description:
+      'A fleet management experience that helps operators track vehicles, monitor drivers and manage day-to-day operations from one clear dashboard.',
+    platforms: ['Web', 'Tablet', 'Mobile App'],
+    focusAreas: ['Dashboard Design', 'UX Improvements', 'Design System'],
     category: 'Case Study',
     href: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
-    devices: [{ type: 'tablet', caption: 'Dashboard' }],
+    devices: [
+      { type: 'tablet', caption: 'Tablet | Dashboard' },
+      { type: 'phone', caption: 'Mobile | Live tracking' },
+    ],
   },
   // Empty layouts, ready to be filled in
   { id: 'project-2', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'phone', caption: 'Screen' }, { type: 'tv', caption: 'Screen' }] },

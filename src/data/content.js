@@ -44,7 +44,8 @@ export const projects = [
     platforms: ['Web', 'Tablet', 'Mobile App'],
     focusAreas: ['Dashboard Design', 'UX Improvements', 'Design System'],
     category: 'Case Study',
-    href: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
+    href: '#/case/fleet-management',
+    figma: 'https://www.figma.com/design/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=34-11',
     devices: [
       { type: 'tablet', caption: 'Tablet | Dashboard' },
       { type: 'phone', caption: 'Mobile | Live tracking' },

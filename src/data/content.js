@@ -79,7 +79,6 @@ export const tools = [
 export const socials = [
   { key: 'resume', label: 'Resume', href: '#', color: '#f59e0b', on: '#161616' },
   { key: 'linkedin', label: 'LinkedIn', href: '#', color: '#0a66c2', on: '#ffffff' },
-  { key: 'mail', label: 'Mail', href: `mailto:${profile.email}`, color: '#ea4335', on: '#ffffff' },
   { key: 'whatsapp', label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}`, color: '#25d366', on: '#0b2a16' },
   { key: 'behance', label: 'Behance', href: '#', color: '#1769ff', on: '#ffffff' },
   { key: 'github', label: 'GitHub', href: '#', color: '#e6edf3', on: '#161616' },

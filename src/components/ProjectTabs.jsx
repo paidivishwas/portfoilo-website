@@ -1,24 +1,27 @@
-/** Pill-shaped filter tabs with thin dividers (single-select). */
+/** Filter tabs stacked one under the other so both options are always visible (single-select). */
 export default function ProjectTabs({ filters, active, onChange }) {
   return (
     <div
       role="group"
       aria-label="Filter projects by type"
-      className="flex h-12 max-w-full flex-none items-center overflow-x-auto rounded-full border border-line bg-tile px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="flex flex-none flex-col gap-1 rounded-3xl border border-line bg-tile p-1.5"
     >
-      {filters.map((f, i) => (
-        <button
-          key={f}
-          type="button"
-          onClick={() => onChange(f)}
-          aria-pressed={f === active}
-          className={`relative whitespace-nowrap px-3.5 text-sm transition-colors ${
-            f === active ? 'font-medium text-ink' : 'text-mute hover:text-ink'
-          } ${i > 0 ? 'before:absolute before:inset-y-0.5 before:left-0 before:w-px before:bg-line' : ''}`}
-        >
-          {f}
-        </button>
-      ))}
+      {filters.map((f) => {
+        const on = f === active
+        return (
+          <button
+            key={f}
+            type="button"
+            onClick={() => onChange(f)}
+            aria-pressed={on}
+            className={`whitespace-nowrap rounded-full px-5 py-2.5 text-left text-sm transition-colors ${
+              on ? 'bg-ink font-semibold text-paper' : 'text-mute hover:bg-[var(--bg-hover)] hover:text-ink'
+            }`}
+          >
+            {f}
+          </button>
+        )
+      })}
     </div>
   )
 }

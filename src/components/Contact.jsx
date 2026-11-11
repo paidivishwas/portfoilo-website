@@ -25,16 +25,21 @@ const paths = {
   x: siX.path,
 }
 
-/** One muted colour at rest; lights up (accent) with the label on hover, focus or press. */
-const iconClass =
-  "shrink-0 text-mute transition-all duration-200 group-hover:scale-110 group-hover:text-accent group-focus-visible:text-accent group-active:scale-95"
+/** Same muted tile for every icon; on hover, focus or press it inverts to white. */
+const tileClass =
+  "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-tile text-mute transition-all duration-200 group-hover:border-ink group-hover:bg-ink group-hover:text-paper group-focus-visible:border-ink group-focus-visible:bg-ink group-focus-visible:text-paper group-active:scale-95"
 
 function SocialIcon({ k }) {
-  if (k === "resume") return <FileText size={20} className={iconClass} aria-hidden="true" />
   return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" className={iconClass} aria-hidden="true">
-      <path d={paths[k]} />
-    </svg>
+    <span className={tileClass} aria-hidden="true">
+      {k === "resume" ? (
+        <FileText size={18} />
+      ) : (
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d={paths[k]} />
+        </svg>
+      )}
+    </span>
   )
 }
 
@@ -101,7 +106,7 @@ export default function Contact() {
           </div>
 
           {/* Socials */}
-          <ul className="space-y-5">
+          <ul className="space-y-3">
             {socials.map((s) => (
               <li key={s.key}>
                 <a
@@ -109,7 +114,7 @@ export default function Contact() {
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel="noreferrer"
                   onClick={s.href === '#' ? (e) => e.preventDefault() : undefined}
-                  className={`group inline-flex items-center gap-3 ${linkClass}`}
+                  className={`group inline-flex items-center gap-4 ${linkClass}`}
                 >
                   <SocialIcon k={s.key} />
                   {s.label}

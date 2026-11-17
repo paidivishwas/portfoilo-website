@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight } from 'lucide-react'
-import { fleetflow as cs } from '../data/fleetflow'
 
 const goTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
@@ -17,7 +16,7 @@ function Pills({ items }) {
 }
 
 /** White hero: headline, buttons, intro, meta and the monitor image. */
-export function FleetFlowHero({ onBack }) {
+function Hero({ cs, onBack }) {
   return (
     <section className="rounded-[2rem] border border-line bg-white px-6 py-10 shadow-[0_1px_2px_rgba(15,30,61,.04),0_12px_40px_-12px_rgba(15,30,61,.12)] md:px-14 md:py-16">
       <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-mute">
@@ -33,23 +32,23 @@ export function FleetFlowHero({ onBack }) {
           <h1 className="text-4xl font-bold leading-[1.05] tracking-tighter text-ink sm:text-5xl md:text-6xl">{cs.title}</h1>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
-              href="#overview"
+              href={`#${cs.sections[0].id}`}
               onClick={(e) => {
                 e.preventDefault()
-                goTo('overview')
+                goTo(cs.sections[0].id)
               }}
               className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-white transition-opacity hover:opacity-85"
             >
-              Read the case study <ArrowRight size={16} />
+              {cs.startLabel ?? 'Read the case study'} <ArrowRight size={16} />
             </a>
-            <a
+            {cs.prototype && <a
               href={cs.prototype}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-white px-6 text-sm font-semibold text-ink transition-colors hover:border-ink"
             >
               View the prototype <ArrowUpRight size={16} />
-            </a>
+            </a>}
           </div>
           <p className="mt-8 max-w-xl text-base leading-7 text-mute md:text-lg md:leading-8">{cs.intro}</p>
           <dl className="mt-8 space-y-4">
@@ -63,14 +62,15 @@ export function FleetFlowHero({ onBack }) {
             ))}
           </dl>
         </div>
-        <img src={cs.hero} alt="FleetFlow dashboard on a desktop monitor" className="h-auto w-full rounded-2xl object-contain" />
+        <img src={cs.hero} alt={`${cs.name} screens`} className="h-auto w-full rounded-2xl object-contain" />
       </div>
     </section>
   )
 }
 
-export default function FleetFlowCaseStudy({ onBack }) {
+export default function CaseStudy({ cs, onBack }) {
   const [active, setActive] = useState(cs.sections[0].id)
+  useEffect(() => setActive(cs.sections[0].id), [cs])
 
   useEffect(() => {
     const els = cs.sections.map((s) => document.getElementById(s.id)).filter(Boolean)
@@ -83,12 +83,12 @@ export default function FleetFlowCaseStudy({ onBack }) {
     )
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [cs])
 
   return (
     <div className="case-light min-h-screen bg-white text-ink">
       <main className="mx-auto max-w-[1280px] px-5 pb-24 pt-6 md:px-8">
-        <FleetFlowHero onBack={onBack} />
+        <Hero cs={cs} onBack={onBack} />
 
         {/* Section tabs: horizontal bar that sticks to the top once the hero scrolls away */}
         <nav
@@ -130,14 +130,14 @@ export default function FleetFlowCaseStudy({ onBack }) {
 
                 {s.end && (
                   <div className="mt-10 flex flex-wrap gap-3">
-                    <a
+                    {cs.prototype && <a
                       href={cs.prototype}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-white transition-opacity hover:opacity-85"
                     >
                       View the prototype <ArrowUpRight size={16} />
-                    </a>
+                    </a>}
                     <button
                       type="button"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

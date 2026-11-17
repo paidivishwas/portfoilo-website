@@ -1,12 +1,8 @@
-import { Clapperboard, Tv, Sparkles, HardDrive } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionMarker from './SectionMarker'
 import CaseStudyStack from './CaseStudyStack'
-import ProjectCard from './ProjectCard'
 import { projects, projectFilters } from '../data/content'
 
-const CASE_STUDY = 'Case Study'
-const icons = [Clapperboard, Tv, Sparkles, HardDrive]
 
 export default function Projects() {
   const groups = projectFilters.map((f) => ({ name: f, items: projects.filter((p) => p.category === f) }))
@@ -28,16 +24,8 @@ export default function Projects() {
                 <p role="status" className="py-6 text-mute">
                   No {name} projects yet.
                 </p>
-              ) : name === CASE_STUDY ? (
-                <CaseStudyStack studies={items} />
               ) : (
-                <ul className="grid gap-x-10 gap-y-16 md:grid-cols-2">
-                  {items.map((p, i) => (
-                    <li key={p.id}>
-                      <ProjectCard project={p} index={i} icon={icons[i % icons.length]} />
-                    </li>
-                  ))}
-                </ul>
+                <CaseStudyStack studies={items} />
               )}
             </div>
           ))}

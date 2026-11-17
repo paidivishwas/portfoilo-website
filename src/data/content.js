@@ -28,7 +28,7 @@ export const about = {
 }
 
 // Filter pills above the projects. A filter with no projects shows an empty state.
-export const projectFilters = ['Case Study', 'UI Screens']
+export const projectFilters = ['Case Study', 'UX Challenges']
 
 // TODO: confirm/replace the subtitle, platforms and focus areas with your real details.
 // category decides which filter a project appears under.
@@ -48,6 +48,36 @@ export const projects = [
     devices: [
       { type: 'laptop', caption: 'Web | Overview', src: '/case/fleetflow/morning.jpg', width: '32%' },
       { type: 'laptop', caption: 'Web | Live tracking', src: '/case/fleetflow/tracking.jpg', width: '40%' },
+    ],
+  },
+  {
+    id: 'epsom-salt-pdp',
+    title: 'Epsom Salt PDP',
+    subtitle: 'E-commerce product page redesign',
+    description: 'A redesign of Carbamide Forte’s Epsom Salt product page: clearer hierarchy, a faster path to purchase and more trust.',
+    platforms: ['Web', 'Desktop & Mobile', 'E-commerce'],
+    focusAreas: ['UX/UI Design', 'Design System', 'Conversion'],
+    category: 'Case Study',
+    href: '#/case/epsom-salt-pdp',
+    devices: [
+      { type: 'laptop', caption: 'Desktop | Product page', src: '/case/epsom/card1.jpg', width: '44%' },
+      { type: 'phone', caption: 'Mobile | Product page', src: '/case/epsom/phone.jpg', width: '17%' },
+    ],
+  },
+  {
+    id: 'pawpulse',
+    title: 'PawPulse',
+    subtitle: 'Pet fitness tracker app',
+    description: 'A companion app for a pet fitness wearable that tells owners, in one glance, whether their pet moved enough today.',
+    platforms: ['Mobile App', 'Design Challenge'],
+    focusAreas: ['UI/UX Design', 'Goal Flow', 'Prototyping'],
+    category: 'UX Challenges',
+    cta: 'View the challenge',
+    href: '#/case/pawpulse',
+    devices: [
+      { type: 'phone', caption: 'Mobile | Under target', src: '/case/pawpulse/ph1.jpg', width: '24%' },
+      { type: 'phone', caption: 'Mobile | Goal reached', src: '/case/pawpulse/ph2.jpg', width: '24%' },
+      { type: 'phone', caption: 'Mobile | Disconnected', src: '/case/pawpulse/ph3.jpg', width: '24%' },
     ],
   },
 ]

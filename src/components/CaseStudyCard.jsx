@@ -43,7 +43,7 @@ export default function CaseStudyCard({ study }) {
           href={study.href}
           className="mt-1 inline-flex h-12 items-center justify-center rounded-2xl bg-accent px-6 text-sm font-semibold text-paper transition-[opacity,transform] hover:opacity-90 active:scale-[0.98]"
         >
-          View case study
+          {study.cta ?? 'View case study'}
           <span className="sr-only"> — {study.title}</span>
         </a>
       </div>

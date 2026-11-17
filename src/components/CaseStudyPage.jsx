@@ -2,7 +2,12 @@ import { useEffect } from 'react'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { projects } from '../data/content'
 import SectionMarker from './SectionMarker'
-import FleetFlowCaseStudy from './FleetFlowCaseStudy'
+import CaseStudy from './CaseStudy'
+import { fleetflow } from '../data/fleetflow'
+import { pawpulse } from '../data/pawpulse'
+import { epsom } from '../data/epsom'
+
+const studies = { 'fleet-management': fleetflow, pawpulse, 'epsom-salt-pdp': epsom }
 
 function Tags({ label, items }) {
   if (!items?.length) return null
@@ -38,7 +43,7 @@ export default function CaseStudyPage({ id, onBack }) {
     )
   }
 
-  if (study.id === 'fleet-management') return <FleetFlowCaseStudy onBack={onBack} />
+  if (studies[study.id]) return <CaseStudy cs={studies[study.id]} onBack={onBack} />
 
   const figmaUrl = study.figma
   const embed = figmaUrl ? `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}` : null

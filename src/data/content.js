@@ -13,7 +13,7 @@ export const profile = {
   // TODO: confirm these hire-card details
   availability: 'Open to work',
   resume: '#',
-  linkedin: '#',
+  linkedin: 'https://www.linkedin.com/feed/',
 }
 
 export const about = {
@@ -74,12 +74,12 @@ export const tools = [
 // color = brand colour used for the tinted pill and the hover fill; on = text colour on that fill
 export const socials = [
   { key: 'resume', label: 'Resume', href: '#', color: '#f59e0b', on: '#161616' },
-  { key: 'linkedin', label: 'LinkedIn', href: '#', color: '#0a66c2', on: '#ffffff' },
+  { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/feed/', color: '#0a66c2', on: '#ffffff' },
   { key: 'whatsapp', label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}`, color: '#25d366', on: '#0b2a16' },
-  { key: 'behance', label: 'Behance', href: '#', color: '#1769ff', on: '#ffffff' },
-  { key: 'github', label: 'GitHub', href: '#', color: '#e6edf3', on: '#161616' },
-  { key: 'instagram', label: 'Instagram', href: '#', color: '#e4405f', on: '#ffffff' },
-  { key: 'x', label: 'X', href: '#', color: '#e6edf3', on: '#161616' },
+  { key: 'behance', label: 'Behance', href: 'https://www.behance.net/paidivishwas', color: '#1769ff', on: '#ffffff' },
+  { key: 'github', label: 'GitHub', href: 'https://github.com/repos', color: '#e6edf3', on: '#161616' },
+  { key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/', color: '#e4405f', on: '#ffffff' },
+  { key: 'x', label: 'X', href: 'https://x.com/home?lang=en', color: '#e6edf3', on: '#161616' },
 ]
 
 // TODO: replace with your real roles (newest first)

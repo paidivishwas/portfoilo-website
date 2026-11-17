@@ -36,6 +36,7 @@ export const projectFilters = ['Case Study', 'UX Challenges']
 export const projects = [
   {
     id: 'fleet-management',
+    cover: '/case/fleetflow/hero.jpg',
     title: 'FleetFlow',
     subtitle: 'Exception-first Fleet Management',
     description:
@@ -45,13 +46,10 @@ export const projects = [
     category: 'Case Study',
     href: '#/case/fleet-management',
     figma: 'https://www.figma.com/proto/u5W31UJNtyu2j0aghtQawe/fleet-management?node-id=17-2616&t=ikq6EFaOBfG8xs4T-1&scaling=min-zoom&content-scaling=fixed&page-id=17%3A2507&starting-point-node-id=17%3A2616&show-proto-sidebar=1',
-    devices: [
-      { type: 'laptop', caption: 'Web | Overview', src: '/case/fleetflow/morning.jpg', width: '32%' },
-      { type: 'laptop', caption: 'Web | Live tracking', src: '/case/fleetflow/tracking.jpg', width: '40%' },
-    ],
   },
   {
     id: 'epsom-salt-pdp',
+    cover: '/case/epsom/hero.jpg',
     title: 'Epsom Salt PDP',
     subtitle: 'E-commerce product page redesign',
     description: 'A redesign of Carbamide Forte’s Epsom Salt product page: clearer hierarchy, a faster path to purchase and more trust.',
@@ -59,13 +57,10 @@ export const projects = [
     focusAreas: ['UX/UI Design', 'Design System', 'Conversion'],
     category: 'Case Study',
     href: '#/case/epsom-salt-pdp',
-    devices: [
-      { type: 'laptop', caption: 'Desktop | Product page', src: '/case/epsom/card1.jpg', width: '44%' },
-      { type: 'phone', caption: 'Mobile | Product page', src: '/case/epsom/phone.jpg', width: '17%' },
-    ],
   },
   {
     id: 'pawpulse',
+    cover: '/case/pawpulse/hero.jpg',
     title: 'PawPulse',
     subtitle: 'Pet fitness tracker app',
     description: 'A companion app for a pet fitness wearable that tells owners, in one glance, whether their pet moved enough today.',
@@ -74,11 +69,6 @@ export const projects = [
     category: 'UX Challenges',
     cta: 'View the challenge',
     href: '#/case/pawpulse',
-    devices: [
-      { type: 'phone', caption: 'Mobile | Under target', src: '/case/pawpulse/ph1.jpg', width: '24%' },
-      { type: 'phone', caption: 'Mobile | Goal reached', src: '/case/pawpulse/ph2.jpg', width: '24%' },
-      { type: 'phone', caption: 'Mobile | Disconnected', src: '/case/pawpulse/ph3.jpg', width: '24%' },
-    ],
   },
 ]
 

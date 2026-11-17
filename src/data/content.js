@@ -50,10 +50,6 @@ export const projects = [
       { type: 'laptop', caption: 'Web | Live tracking', src: '/case/fleetflow/tracking.jpg', width: '40%' },
     ],
   },
-  // Empty layouts, ready to be filled in
-  { id: 'project-2', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'phone', caption: 'Screen' }, { type: 'tv', caption: 'Screen' }] },
-  { id: 'project-3', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'phone', caption: 'Screen' }, { type: 'tablet', caption: 'Screen' }] },
-  { id: 'project-4', title: 'Project title', subtitle: '', description: '', platforms: [], focusAreas: [], category: 'Case Study', href: '#', devices: [{ type: 'tv', caption: 'Screen' }, { type: 'phone', caption: 'Screen' }] },
 ]
 
 // icon: key of a brand logo in ToolCard.jsx, or badge: letters shown in a coloured tile. color = brand colour.

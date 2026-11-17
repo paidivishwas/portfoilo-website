@@ -32,7 +32,6 @@ export default function App() {
   if (id) {
     return (
       <>
-        <ParticleField />
         <CaseStudyPage id={id} onBack={back} />
         <HireMe />
       </>

@@ -90,37 +90,36 @@ export default function FleetFlowCaseStudy({ onBack }) {
       <main className="mx-auto max-w-[1280px] px-5 pb-24 pt-6 md:px-8">
         <FleetFlowHero onBack={onBack} />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[210px_1fr] lg:gap-12">
-          {/* Section nav: left rail on desktop, scrolling chips on mobile */}
-          <aside className="lg:relative">
-            <nav
-              aria-label="Case study sections"
-              className="sticky top-3 z-20 -mx-5 flex gap-2 overflow-x-auto bg-white/90 px-5 py-2 backdrop-blur lg:top-24 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:border-l lg:border-line lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none"
-            >
-              {cs.sections.map((s) => {
-                const on = active === s.id
-                return (
+        {/* Section tabs: horizontal bar that sticks to the top once the hero scrolls away */}
+        <nav
+          aria-label="Case study sections"
+          className="sticky top-0 z-40 -mx-5 mt-8 border-b border-line bg-white/90 px-5 backdrop-blur md:-mx-8 md:px-8 md:pr-40"
+        >
+          <ul className="flex gap-1 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {cs.sections.map((s) => {
+              const on = active === s.id
+              return (
+                <li key={s.id} className="shrink-0">
                   <button
-                    key={s.id}
                     type="button"
                     onClick={() => goTo(s.id)}
-                    aria-current={on ? 'true' : undefined}
-                    className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-left text-sm transition-colors lg:-ml-px lg:rounded-none lg:border-0 lg:border-l-2 lg:py-2 lg:pl-4 lg:pr-2 ${
-                      on
-                        ? 'border-ink font-medium text-ink lg:border-accent'
-                        : 'border-line text-mute hover:text-ink lg:border-transparent'
+                    aria-current={on ? "true" : undefined}
+                    className={`whitespace-nowrap rounded-full px-4 py-2 text-sm transition-colors ${
+                      on ? "bg-ink font-medium text-white" : "text-mute hover:bg-slate-100 hover:text-ink"
                     }`}
                   >
                     {s.nav}
                   </button>
-                )
-              })}
-            </nav>
-          </aside>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
 
+        <div className="mt-10">
           <div className="min-w-0">
             {cs.sections.map((s) => (
-              <section key={s.id} id={s.id} aria-label={s.title} className="scroll-mt-24 pb-12 last:pb-0">
+              <section key={s.id} id={s.id} aria-label={s.title} className="scroll-mt-20 pb-12 last:pb-0">
                 <div className="space-y-6">
                   {s.slides.map((sl) => (
                     <div key={sl.src} className="overflow-hidden rounded-2xl border border-line bg-white">

@@ -12,7 +12,7 @@ export const profile = {
   portfolio: '#work',
   // TODO: confirm these hire-card details
   availability: 'Open to work',
-  resume: '#',
+  resume: 'https://drive.google.com/file/d/1Aq1VD-67xCGD1FFl6IMGoCyaHFUU69vw/view?usp=sharing',
   linkedin: 'https://www.linkedin.com/feed/',
 }
 
@@ -93,7 +93,7 @@ export const tools = [
 // TODO: replace each '#' with the real link
 // color = brand colour used for the tinted pill and the hover fill; on = text colour on that fill
 export const socials = [
-  { key: 'resume', label: 'Resume', href: '#', color: '#f59e0b', on: '#161616' },
+  { key: 'resume', label: 'Resume', href: profile.resume, color: '#f59e0b', on: '#161616' },
   { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/feed/', color: '#0a66c2', on: '#ffffff' },
   { key: 'whatsapp', label: 'WhatsApp', href: `https://wa.me/${profile.phoneRaw.replace('+', '')}`, color: '#25d366', on: '#0b2a16' },
   { key: 'behance', label: 'Behance', href: 'https://www.behance.net/paidivishwas', color: '#1769ff', on: '#ffffff' },

@@ -126,6 +126,8 @@ export default function HireMe() {
                   <div className="mt-4 grid grid-cols-2 gap-3">
                     <a
                       href={profile.resume}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent text-sm font-semibold text-[#0b1405] transition-opacity hover:opacity-85"
                     >
                       <FileText size={16} /> View resume
